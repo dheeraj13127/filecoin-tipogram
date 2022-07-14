@@ -3,3 +3,4 @@ export {default as HeroSection} from './LandingComponents/HeroSection/HeroSectio
 export {default as TechStack} from './LandingComponents/TechStack/TechStack';
 export {default as FeaturesSection} from './LandingComponents/FeaturesSection/FeaturesSection';
 export {default as CategorizedImages} from './LandingComponents/CategorizedImages/CategorizedImages';
+export {default as LandingFooter} from  './LandingComponents/LandingFooter/LandingFooter';

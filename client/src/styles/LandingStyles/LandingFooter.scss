@@ -1,0 +1,74 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.landingFooterContainer{
+    margin-top: 50px !important;
+}
+.landingFooterInfo{
+    font-family: $roboto !important;
+    font-weight: 500 !important;
+    color: #ADB9C7 !important;
+    margin-top: 20px !important;
+}
+.landingFooterCompany{
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: white !important;
+   
+}
+
+.landingFooterAboutUs{
+    font-family: $roboto !important;
+    font-weight: 500 !important;
+    color: #ADB9C7 !important;
+    margin-top: 20px !important;
+   
+}
+.landingFootercopyright{
+    font-family: $roboto !important;
+    font-weight: 500 !important;
+    color: #ADB9C7 !important;
+    margin-top: 50px !important;
+}
+.landingFooterIconsBox{
+    margin-top: 20px !important;
+}
+.landingFooterIcon{
+    color: #ADB9C7 !important;
+    margin: 0px 5px  !important ;
+}
+
+@media only screen and (max-width: 768px) {
+    .landingFooterCompany{
+        font-size: 15px !important;
+    }
+    .landingFooterAboutUs{
+        font-size: 13px !important;
+    }
+    .landingFooterInfo{
+        font-size: 13px !important;
+    }
+
+   }
+   @media only screen and (max-width: 600px) {
+    .landingFooterImage{
+        width: 100px !important;
+        height: 30px !important;
+        margin-top: -5px !important;
+    }
+    .landingFooterCompany{
+        font-size: 13px !important;
+    }
+    .landingFooterAboutUs{
+        margin-top: 10px !important;
+        font-size: 10px !important;
+    }
+    .landingFooterInfo{
+        margin-top: 5px !important;
+        font-size: 10px !important;
+    }
+
+   }

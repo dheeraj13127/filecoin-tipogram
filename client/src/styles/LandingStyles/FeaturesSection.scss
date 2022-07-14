@@ -1,0 +1,79 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.featuresSectionContainer{
+    margin-top: 150px !important;
+
+}
+.MuiPaper-elevation1 {
+    box-shadow: none !important;
+    // background-color: transparent !important;
+  }
+.featuresSectionHeader{
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: white !important;
+   text-align: center !important;
+    
+}
+.MuiCard-root.same-height {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+.featuresSectionCard {
+    margin-top: 20px !important;
+    background: rgba(209, 202, 202, 0.25) !important;
+    backdrop-filter: blur( 4px ) !important;
+    -webkit-backdrop-filter: blur( 4px ) !important;
+    border-radius: 10px !important;
+    border: 2px solid rgba(209, 202, 202, 0.25) !important;
+  }
+.featuresSectionCard:hover{
+    background: transparent !important;
+    transition: 0.5s all ease-in-out !important;
+    border: 2px solid rgba(209, 202, 202, 0.25) !important;
+}
+.featuresSectionCardParent{
+    background: transparent !important;
+  }
+  .featuresSectionCardTitle {
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-top: 25px !important;
+    text-align: center !important;
+  }
+  .featuresSectionCardInfo {
+    font-family: $roboto !important;
+    font-weight: 500 !important;
+    color: #ADB9C7 !important;
+    text-align: center !important;
+  }
+  
+
+  .featuresSectionLottieBox{
+    display: flex !important;
+  justify-content: center !important;
+  }
+  .featuresSectionLottie{
+      width: 200px !important; 
+      height: 200px !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .featuresSectionContainer{
+        margin-top: 75px !important;
+    }
+        .featuresSectionHeader{
+            font-size: 35px !important;
+        }
+        .featuresSectionLottie{
+            width: 150px !important;
+            height: 150px !important;
+        }
+   }

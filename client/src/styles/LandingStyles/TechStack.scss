@@ -1,0 +1,27 @@
+
+
+.techStackContainer{
+    margin-top: 125px !important;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .techStackImg{
+        height: 40px !important;
+        width: 120px !important;
+    }
+   }
+@media only screen and (max-width: 768px) {
+    .techStackContainer{
+        margin-top: 75px !important;
+    }
+    .techStackImg{
+        height: 35px !important;
+        width: 110px !important;
+        margin-top: 30px !important;
+    }
+    .techStackImgBox{
+        display: flex !important;
+        justify-content: center !important;
+    }
+   }

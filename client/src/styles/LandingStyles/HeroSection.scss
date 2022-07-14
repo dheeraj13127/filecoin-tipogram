@@ -1,0 +1,98 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.heroSectionContainer{
+    margin-top: 100px !important;
+}
+.heroSectionTitle{
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-top: 100px !important;
+}
+.heroSectionSubtitle{
+    font-family: $poppins !important;
+    font-weight: 500 !important;
+    color: #8F9CA9 !important;
+    margin-top: 30px !important;
+   
+}
+.heroSectionButton{
+    font-family: $roboto !important;
+    font-weight: 500 !important;
+    background-color: #1E50FF !important;
+    border-radius: 8px !important;
+    color: white !important;
+    text-transform: capitalize !important;
+    margin-top: 30px !important;
+    font-size: 18px !important;
+}
+.heroSectionButton:hover{
+    box-shadow: 1px 0px 8px rgb(201, 195, 195) !important;
+}
+.heroSectionImgBox{
+    display: flex !important;
+    justify-content: center !important;
+    
+}
+.heroSectionImgBoxSmall{
+    display: none !important;
+}
+@media only screen and (max-width: 1200px) {
+    .heroSectionImgBox{
+        display: none !important;
+    }
+    .heroSectionImgBoxSmall{
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .heroSectionMainImgSmall{
+        height: 400px  !important;
+        width: 350px !important;
+    }
+    .heroSectionTitle{
+        font-size: 45px !important;
+        margin-top: 50px !important;
+    }
+    .heroSectionSubtitle{
+        font-size: 15px !important;
+    }
+    .heroSectionButton{
+        font-size: 15px !important;
+    }
+   }
+@media only screen and (max-width: 768px) {
+    .heroSectionImgBox{
+        display: none !important;
+    }
+    .heroSectionImgBoxSmall{
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .heroSectionMainImgSmall{
+        height: 400px  !important;
+        width: 300px !important;
+    }
+    .heroSectionTitle{
+        font-size: 35px !important;
+        text-align: center !important;
+    }
+    .heroSectionSubtitle{
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+    .heroSectionButton{
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+    .heroSectionButtonBox{
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .heroSectionContainer{
+        margin-top: 80px !important;
+    }
+   }

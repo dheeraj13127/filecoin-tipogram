@@ -1,0 +1,56 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+
+.landingNavbar{
+    box-shadow: none !important;
+    background:transparent !important;
+    
+    
+}
+.landingNavbarLogoBox{
+    flex:1 !important;
+}
+.landingNavbarLogo{
+    // height:50px;
+    // width:200px;
+}
+.landingNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#ADB9C7 !important;
+}
+.landingNavbarItems:hover{
+  color: white !important;
+
+}
+.landingSmallNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:black !important;
+}
+
+.landingNavbarSmall{
+    display: none !important;
+}
+.landingNavbarMenuIcon{
+    color: white !important;
+}
+.css-hyum1k-MuiToolbar-root{
+    padding: 0px !important;
+}
+@media only screen and (max-width: 768px) {
+    .landingNavbarLarge{
+        display: none !important;
+    }
+    .landingNavbarSmall{
+        display: flex !important;
+    }
+   }
+
+ 

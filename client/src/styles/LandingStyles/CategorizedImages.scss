@@ -4,3 +4,88 @@ $poppins: "Poppins", sans-serif;
 $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
 
+.categorizedImagesContainer{
+    margin-top: 150px !important;
+}
+
+
+.catergorizedImagesHeader{
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: white !important;
+   text-align: center !important;
+    
+}
+.categorizedImagesBox{
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.categorizedImagesImg{
+    margin-top: 50px !important;
+}
+.categorizedImagesTypeBtn{
+    margin-top: 50px !important;
+    background-color: #1E50FF !important;
+    color: white !important;
+    text-transform: capitalize  !important;
+    font-family: $poppins !important;
+    font-weight: 550 !important;
+    font-size: 18px !important;
+    border: 1.5px solid #1E50FF !important;
+}
+.categorizedImagesTypeBtn:hover{
+    background-color:transparent !important;
+    border: 1.5px solid #1E50FF !important;
+    transition: 0.2s all ease-in-out !important;
+}
+@media only screen and (max-width: 768px) {
+    .categorizedImagesContainer{
+        margin-top: 75px !important;
+    }
+        .catergorizedImagesHeader{
+            font-size: 35px !important;
+    }
+    .categorizedImagesImg{
+            height: 400px  !important;
+            width: 300px !important;
+        }
+
+    .categorizedImagesTypeBtn{
+        font-size: 14px !important;
+       
+    }
+
+   }
+   @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+ 
+    .categorizedImagesImg{
+            height: 400px  !important;
+            width: 330px !important;
+        }
+
+   
+
+   }  
+   @media only screen and (min-width: 900px) and (max-width: 1199px) {
+ 
+    .categorizedImagesImg{
+            height: 400px  !important;
+            width: 260px !important;
+        }
+
+   
+
+   }  
+
+   @media only screen and (min-width: 768px) and (max-width: 899px) {
+ 
+    .categorizedImagesImg{
+            height: 400px  !important;
+            width: 350px !important;
+        }
+
+   
+
+   }  

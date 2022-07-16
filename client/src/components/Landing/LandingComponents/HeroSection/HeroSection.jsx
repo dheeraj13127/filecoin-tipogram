@@ -18,7 +18,7 @@ function HeroSection() {
                        <br /> You can tip the image if you are awestruck by it.
                     </Typography>
                     <div className='heroSectionButtonBox'>
-                    <Button className="heroSectionButton">Get Started</Button>
+                    <a href="/signup" className='navigatingLink'><Button className="heroSectionButton">Get Started</Button></a>
                     </div>
                    
                 </Grid>

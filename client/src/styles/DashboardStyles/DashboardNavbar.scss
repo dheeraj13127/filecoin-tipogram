@@ -1,0 +1,67 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+
+.dashboardNavbar{
+    box-shadow: none !important;
+    background:transparent !important;
+    
+    
+}
+.dashboardNavbarLogoBox{
+    flex:1 !important;
+}
+.dashboardNavbarLogo{
+    // height:50px;
+    // width:200px;
+}
+.dashboardNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:#ADB9C7 !important;
+}
+.dashboardNavbarItems:hover{
+  color: white !important;
+
+}
+.dashboardSmallNavbarItems{
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color:black !important;
+}
+
+.dashboardNavbarSmall{
+    display: none !important;
+}
+.dashboardNavbarMenuIcon{
+    color: white !important;
+}
+.css-hyum1k-MuiToolbar-root{
+    padding: 0px !important;
+}
+.dashboardNavbarChip{
+    margin-right: 10px !important;
+    color: white !important;
+    background-color: #ADB9C7 !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-transform: capitalize  !important;
+}
+@media only screen and (max-width: 768px) {
+    .dashboardNavbarLarge{
+        display: none !important;
+    }
+    .dashboardNavbarSmall{
+        display: flex !important;
+    }
+
+ 
+   }
+
+ 

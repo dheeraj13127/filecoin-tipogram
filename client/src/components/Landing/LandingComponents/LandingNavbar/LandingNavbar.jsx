@@ -30,10 +30,10 @@ function LandingNavbar() {
                   <>
                    
             
-              <a className='navigatingLink' href='/signUp'><Button size="large" className="landingNavbarItems">
+              <a className='navigatingLink' href='/signup'><Button size="large" className="landingNavbarItems">
                SignUp
               </Button></a>
-              <a className='navigatingLink' href='/signIn'><Button size="large" className="landingNavbarItems">
+              <a className='navigatingLink' href='/signin'><Button size="large" className="landingNavbarItems">
                 SignIn
               </Button></a>
                   </>
@@ -71,10 +71,19 @@ function LandingNavbar() {
                 }}
                 className="smallLandingNavbar"
               >
-                
+                {
+                  location.pathname==='/' ?(
+                    <>
+                     <a className='navigatingLink' href='/signup'><MenuItem className="landingSmallNavbarItems" onClick={handleClose}>Sign Up</MenuItem></a>
+                 <a className='navigatingLink' href='/signin'><MenuItem className="landingSmallNavbarItems" onClick={handleClose}>Sign In</MenuItem></a>
+                    </>
+                  ):(
+                    <a className='navigatingLink' href='/'><MenuItem className="landingSmallNavbarItems" onClick={handleClose}>Home</MenuItem></a>
+                  
+                  )
+                }
                
-                <a className='navigatingLink' href='/signUp'><MenuItem className="landingSmallNavbarItems" onClick={handleClose}>Sign Up</MenuItem></a>
-                 <a className='navigatingLink' href='/signIn'><MenuItem className="landingSmallNavbarItems" onClick={handleClose}>Sign In</MenuItem></a>
+               
 
               </Menu>
             </div>

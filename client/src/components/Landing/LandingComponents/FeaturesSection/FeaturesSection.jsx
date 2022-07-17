@@ -8,7 +8,7 @@ function FeaturesSection() {
     <div className='featuresSectionContainer'>
         <Grid container spacing={4}>
             <Grid item xs={12}>
-                <Typography variant='h3' className='featuresSectionHeader'>Create & Sell Your Images</Typography>
+                <Typography variant='h3' className='featuresSectionHeader'>Create & Post Your Images</Typography>
             </Grid>
             {
                 featuresSectionData.map((fs,index)=>(

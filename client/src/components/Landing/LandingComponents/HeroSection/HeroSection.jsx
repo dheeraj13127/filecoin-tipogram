@@ -14,8 +14,8 @@ function HeroSection() {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <Typography variant='h2' className='heroSectionTitle'>Discover a New Era of Crypto Images</Typography>
-                    <Typography variant='body1' className='heroSectionSubtitle'>Tipogram is a marketplace where you can explore various images.
-                       <br /> You can tip the image if you are awestruck by it.
+                    <Typography variant='body1' className='heroSectionSubtitle'>Tipogram is a platform where you can explore various digital arts.
+                       <br /> You can tip the artist if you are awestruck by his work.
                     </Typography>
                     <div className='heroSectionButtonBox'>
                     <a href="/signup" className='navigatingLink'><Button className="heroSectionButton">Get Started</Button></a>

@@ -10,7 +10,7 @@ import {
   Typography,
   Chip,
   Avatar,
-  Button
+ 
 
 } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -71,7 +71,7 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
           <Chip
                  avatar={<Avatar alt="Metamask" src={metamask} />}
-                 label={metamaskAccount?`${ethBalance} ETH`:"disconnected"}
+                 label={metamaskAccount?`${parseFloat(ethBalance).toFixed(3)} ETH`:"disconnected"}
                 variant="outlined"
                 className="dashboardDrawerChip"
                  />

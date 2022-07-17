@@ -1,6 +1,7 @@
-import React from 'react'
-import {DashboardNavbar} from '../index'
-function DashboardDisplay({userData,ethBalance,metamaskAccount}) {
+import React,{} from 'react'
+
+function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract}) {
+
   return (
     <div>
       {/* <DashboardNavbar userData={userData} ethBalance={ethBalance} metamaskAccount={metamaskAccount}/> */}

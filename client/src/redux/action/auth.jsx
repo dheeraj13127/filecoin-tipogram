@@ -8,7 +8,7 @@ export const userSignUp =(response, navigate) => async (dispatch) => {
       icon: "⏳",
     });
     await axios
-      .post("http://localhost:5000/auth/signUp", response)
+      .post("https://tipogram.herokuapp.com/auth/signUp", response)
       .then((res) => {
         
         const userId = res.data.user._id;
@@ -32,7 +32,7 @@ export const userSignIn =
   (response, navigate) => async (dispatch) => {
    
     await axios
-      .post("http://localhost:5000/auth/signIn", response)
+      .post("https://tipogram.herokuapp.com/auth/signIn", response)
       .then((res) => {
          
        
@@ -62,7 +62,7 @@ export const userSignIn =
 
   export const getUserProfile = (resp) => async (dispatch) => {
     await axios
-      .post("http://localhost:5000/auth/getProfile", resp)
+      .post("https://tipogram.herokuapp.com/auth/getProfile", resp)
       .then((res) => {
         
         dispatch({

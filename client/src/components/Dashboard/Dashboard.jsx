@@ -7,10 +7,13 @@ import {DashboardDisplay,MyProfile,PostImage,DashboardNavbar} from './index'
 import {getUserProfile} from '../../redux/action/auth'
 import { connectWallet } from '../../redux/action/blockchain';
 import {ethers} from 'ethers'
+import {LandingFooter} from '../Landing'
 function Dashboard() {
+  let tipogramContract=useSelector(state=>state.tipogramContract)
   const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
 	const [userBalance, setUserBalance] = useState(null);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let tipogramUserId = sessionStorage.getItem("tipogramUserId");
@@ -31,23 +34,33 @@ function Dashboard() {
     }, []);// eslint-disable-line react-hooks/exhaustive-deps 
     useEffect(() => {
       dispatch(getUserProfile(userProfile));
+      
     }, [])// eslint-disable-line react-hooks/exhaustive-deps 
+
+ 
     let userData = useSelector(
       (state) => state.userData
     );
-    
+ 
+                                      
+  
   return (
+    <>
     <div className='dashboardContainer'>
-      <DashboardNavbar userData={userData} ethBalance={userBalance} metamaskAccount={defaultAccount}/>
+      <DashboardNavbar tipogramContract={tipogramContract} userData={userData} ethBalance={userBalance} metamaskAccount={defaultAccount}/>
     <Routes>
      <Route path='/' 
-     element={<DashboardDisplay errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
+     element={<DashboardDisplay  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
     <Route path='/myProfile' element={<MyProfile/>}/>
-    <Route path='/postImage' element={<PostImage/>}/>
+    <Route path='/postImage' element={<PostImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>}/>
     </Routes>     
-  
+    
 <Toaster position="top-center" reverseOrder={false} />
 </div>
+<div className="landingContainerFooter">
+        <LandingFooter/>
+      </div>
+</>
   )
 }
 

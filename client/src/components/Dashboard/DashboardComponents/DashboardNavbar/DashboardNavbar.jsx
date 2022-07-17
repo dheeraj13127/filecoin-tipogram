@@ -9,17 +9,27 @@ import {userSignOut} from '../../../../redux/action/auth'
 import profileDefault from '../../../../assets/landing/tipogram-logo-2.png'
 import metamask from '../../../../assets/dashboard/metamask.png'
 import DashboardDrawer from './DashboardDrawer'
-function DashboardNavbar({userData,ethBalance,metamaskAccount}) {
+function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract}) {
     const location = useLocation();
     const dispatch = useDispatch();
     const navigate=useNavigate()
- 
+
     const handleUserSignOut=()=>{
         dispatch(userSignOut(navigate));
     }
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+    // const find=async()=>{
+    //   let imageCount=await tipogramContract&&tipogramContract.methods.imageCount().call()
+    //   .then(res=>{
+    //     console.log(res)
+    //   })
+    //   setImgCount(imageCount)
+      
+      
+    // }
+   
+    
   return (
     <div className="">
     <Grid container>
@@ -45,7 +55,7 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount}) {
                  /></a>
             <Chip
                  avatar={<Avatar alt="Metamask" src={metamask} />}
-                 label={metamaskAccount?`${ethBalance} ETH`:"disconnected"}
+                 label={metamaskAccount?`${parseFloat(ethBalance).toFixed(3)} ETH`:"disconnected"}
                 variant="outlined"
                 className="dashboardNavbarChip"
                  />
@@ -62,6 +72,7 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount}) {
               <a href='/signIn' onClick={()=>handleUserSignOut()}  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Sign Out
               </Button></a>
+        
             </div>
                     </>
                 )

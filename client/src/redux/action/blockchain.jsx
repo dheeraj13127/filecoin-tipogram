@@ -1,4 +1,4 @@
-import {FETCH_OWNER_ACCOUNT,LOAD_TIPOGRAM_CONTRACT} from '../constants/constants'
+import {FETCH_OWNER_ACCOUNT,LOAD_TIPOGRAM_CONTRACT,UPLOAD_IMAGE} from '../constants/constants'
 import toast from "react-hot-toast";
 
 export const loadTipogramContract = payload => async (dispatch) => {
@@ -45,6 +45,7 @@ export const loadTipogramContract = payload => async (dispatch) => {
 	const accountChangedHandler = (newAccount) => {
 		setDefaultAccount(newAccount);
 		getAccountBalance(newAccount.toString());
+		
 	}
 
 	const getAccountBalance = (account) => {
@@ -54,6 +55,7 @@ export const loadTipogramContract = payload => async (dispatch) => {
 		})
 		.catch(error => {
 			setErrorMessage(error.message);
+			toast.error(error.message);
 		});
 	};
 
@@ -69,6 +71,34 @@ export const loadTipogramContract = payload => async (dispatch) => {
 	window.ethereum.on('chainChanged', chainChangedHandler);
   }
 
+
+
+
+
+  export const uploadImage = (data,tipogramContract,userData,metamaskAccount,navigate) => async (dispatch) => {
+	toast("Will take few seconds", {
+		icon: "⏳",
+	  });
+	await tipogramContract.methods.uploadImage(data.imgUrl,data.title,userData.profileImage,userData.userName,data.imgType).send({from:metamaskAccount,gas:3000000})
+	.then(res=>{
+		toast("Successfully posted",{
+			icon:"🎉",
+
+		})
+		dispatch({
+			type: UPLOAD_IMAGE,
+			payload: res
+		  })
+		setTimeout(()=>{
+			navigate("/dashboard")
+		},1500)
+	})
+	.catch(err=>{
+		console.log(err)
+		toast.error("Transaction failed")
+	})
+   
+  }
 
 
 //  const networks = {

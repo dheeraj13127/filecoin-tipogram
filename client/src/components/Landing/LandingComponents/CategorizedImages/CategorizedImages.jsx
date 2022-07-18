@@ -14,7 +14,7 @@ function CategorizedImages() {
         categorizedImagesData.map((imgs,index)=>(
           <Grid key={index} item xs={12} sm={12} md={4} lg={4} className="categorizedImagesBox">
             <Button className='categorizedImagesTypeBtn'>{imgs.type}</Button>
-            <img src={imgs.url} alt="categorized-images" className='categorizedImagesImg'/>
+            <img loading='eager' src={imgs.url} alt="categorized-images" className='categorizedImagesImg'/>
           </Grid>
         ))
       }

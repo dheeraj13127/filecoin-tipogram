@@ -10,19 +10,37 @@ import {ethers} from 'ethers'
 import {LandingFooter} from '../Landing'
 function Dashboard() {
   let tipogramContract=useSelector(state=>state.tipogramContract)
+
   const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
 	const [userBalance, setUserBalance] = useState(null);
-
+  const [images,setImages]=useState([])
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let tipogramUserId = sessionStorage.getItem("tipogramUserId");
   let userProfile = {
       userId: tipogramUserId,
     };
+
+
+    useEffect(() => {
+      fetchTipogramImagesFromContract();
+    },[tipogramContract])// eslint-disable-line react-hooks/exhaustive-deps 
+
+
+    const fetchTipogramImagesFromContract=async()=>{
+      const imageCount=await tipogramContract.methods.imageCount().call()
+      for(var i=1;i<=imageCount;i++){
+        const image=await tipogramContract.methods.images(i).call()
+        
+        setImages(prevState=>[...prevState,image])
+      }
+     }
+    
     useEffect(()=>{
       dispatch(connectWallet(setErrorMessage,setDefaultAccount,setUserBalance,ethers))
 },[])// eslint-disable-line react-hooks/exhaustive-deps  
+
     useEffect(() => {
       if (
         tipogramUserId === "" ||
@@ -42,7 +60,7 @@ function Dashboard() {
       (state) => state.userData
     );
  
-                                      
+                                    
   
   return (
     <>
@@ -50,14 +68,14 @@ function Dashboard() {
       <DashboardNavbar tipogramContract={tipogramContract} userData={userData} ethBalance={userBalance} metamaskAccount={defaultAccount}/>
     <Routes>
      <Route path='/' 
-     element={<DashboardDisplay  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
+     element={<DashboardDisplay tipogramImages={images}  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
     <Route path='/myProfile' element={<MyProfile/>}/>
     <Route path='/postImage' element={<PostImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>}/>
     </Routes>     
     
-<Toaster position="top-center" reverseOrder={false} />
-</div>
-<div className="landingContainerFooter">
+    <Toaster position="top-center" reverseOrder={false} />
+    </div>
+    <div className="landingContainerFooter">
         <LandingFooter/>
       </div>
 </>

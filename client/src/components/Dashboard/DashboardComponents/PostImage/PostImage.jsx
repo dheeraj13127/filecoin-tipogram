@@ -48,8 +48,8 @@ const handleSignUpSubmit=async(e)=>{
         imgUrl:proUrl
       }
       dispatch(uploadImage(data,tipogramContract,userData,metamaskAccount,navigate))
-      // setPost({imgType:"",title:"",tipAmount:""})
-      // setImgHash(null)
+      setPost({imgType:"",title:"",tipAmount:""})
+      setImgHash(null)
       
     } catch (error) {
       toast.error("Something went wrong !")

@@ -1,0 +1,25 @@
+
+
+
+.latestImagesImgBox{
+    display: flex !important;
+    justify-content: center !important;
+    // #272D37
+}
+
+.latestImagesImg{
+    width:320px !important;
+    height:320px !important;
+    border-radius: 15px !important;
+}
+.latestImagesCard {
+    margin-top: 20px !important;
+    background: rgba(209, 202, 202, 0.25) !important;
+    backdrop-filter: blur( 4px ) !important;
+    -webkit-backdrop-filter: blur( 4px ) !important;
+    border-radius: 10px !important;
+    border: 2px solid rgba(209, 202, 202, 0.25) !important;
+  }
+.latestImagesCardParent{
+    background: transparent !important;
+  }

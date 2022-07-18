@@ -55,6 +55,12 @@
 				"internalType": "string",
 				"name": "imageType",
 				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "createdAt",
+				"type": "uint256"
 			}
 		],
 		"name": "ImageCreated",
@@ -110,6 +116,18 @@
 				"internalType": "string",
 				"name": "authorName",
 				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "imageType",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "createdAt",
+				"type": "uint256"
 			}
 		],
 		"name": "ImageLiked",
@@ -171,6 +189,12 @@
 				"internalType": "string",
 				"name": "imageType",
 				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "createdAt",
+				"type": "uint256"
 			}
 		],
 		"name": "ImageTipped",
@@ -243,6 +267,11 @@
 				"internalType": "string",
 				"name": "imageType",
 				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "createdAt",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

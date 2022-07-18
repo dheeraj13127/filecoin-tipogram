@@ -1,4 +1,4 @@
-import {FETCH_OWNER_ACCOUNT,LOAD_TIPOGRAM_CONTRACT,UPLOAD_IMAGE} from '../constants/constants'
+import {FETCH_OWNER_ACCOUNT,LOAD_TIPOGRAM_CONTRACT,UPLOAD_IMAGE,FETCH_TIPOGRAM_IMAGES} from '../constants/constants'
 import toast from "react-hot-toast";
 
 export const loadTipogramContract = payload => async (dispatch) => {
@@ -14,6 +14,13 @@ export const loadTipogramContract = payload => async (dispatch) => {
       type: FETCH_OWNER_ACCOUNT,
       payload: payload
     })
+  }
+  
+  export const fetchTipogramImages = payload => async (dispatch) => {
+	dispatch({
+	  type: FETCH_TIPOGRAM_IMAGES,
+	  payload: payload
+	})
   }
 
   export const connectWallet = (setErrorMessage,setDefaultAccount,setUserBalance,ethers) => async (dispatch) => {
@@ -89,9 +96,7 @@ export const loadTipogramContract = payload => async (dispatch) => {
 			type: UPLOAD_IMAGE,
 			payload: res
 		  })
-		setTimeout(()=>{
-			navigate("/dashboard")
-		},1500)
+		
 	})
 	.catch(err=>{
 		console.log(err)

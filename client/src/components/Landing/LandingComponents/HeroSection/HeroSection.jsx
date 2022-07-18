@@ -8,7 +8,7 @@ function HeroSection() {
             <Grid container>
                 <Grid item xs={12} sm={12} md={12} lg={6} className="heroSectionImgBoxSmall">
                     <div className="">
-                    <img src={heroSectionMain} alt="heroSectionMainImgSmall" className='heroSectionMainImgSmall'/>
+                    <img loading="eager" src={heroSectionMain} alt="heroSectionMainImgSmall" className='heroSectionMainImgSmall'/>
                     </div>
                  
                 </Grid>
@@ -24,7 +24,7 @@ function HeroSection() {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <div className="heroSectionImgBox">
-                    <img src={heroSectionMain} alt="heroSectionMainImg"/>
+                    <img loading="eager" src={heroSectionMain} alt="heroSectionMainImg"/>
                     </div>
                  
                 </Grid>

@@ -6,7 +6,7 @@ import { TIPOGRAM_CONTRACT } from './contractProvider/ContractProvider';
 function BlockchainProvider() {
   
     const dispatch = useDispatch();
- 
+   
 
      useEffect(()=>{
         const web3 = new Web3(Web3.givenProvider);
@@ -15,8 +15,9 @@ function BlockchainProvider() {
             const TipogramContract = new web3.eth.Contract(
              TIPOGRAM_CONTRACT.abi,TIPOGRAM_CONTRACT.address
             );
+            
             dispatch(loadTipogramContract(TipogramContract))
-           
+          
           
           } catch (err) {
             console.log(err);
@@ -24,6 +25,7 @@ function BlockchainProvider() {
       
      },[]) // eslint-disable-line react-hooks/exhaustive-deps  
     
+   
     
     return (
         <div>

@@ -32,6 +32,7 @@ $openSans: "Open Sans", sans-serif;
     -webkit-backdrop-filter: blur( 4px ) !important;
     border-radius: 10px !important;
     border: 2px solid rgba(209, 202, 202, 0.25) !important;
+    flex:0 0 auto !important;
   }
 .featuresSectionCard:hover{
     background: transparent !important;
@@ -64,6 +65,7 @@ $openSans: "Open Sans", sans-serif;
       width: 200px !important; 
       height: 200px !important;
   }
+ 
 
   @media only screen and (max-width: 768px) {
     .featuresSectionContainer{

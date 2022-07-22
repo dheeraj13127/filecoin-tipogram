@@ -1,96 +1,67 @@
-import React from 'react'
-import {Grid,Typography,Card,CardActionArea,CardContent} from '@mui/material'
+import React,{useState} from 'react'
+import {Typography,Card,CardActionArea,CardContent, Button, IconButton} from '@mui/material'
 import cartoon from '../../../../assets/dashboard/digitalart.jpg'
 import '../../../../styles/DashboardStyles/LatestImages.scss'
-function LatestImages() {
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+function LatestImages({tipogramImages}) {
+  const [like,setLike]=useState("0")
+  console.log(tipogramImages)
   return (
-    <div>
-      <Grid container spacing={6}>
-      <Grid component={Card} className="latestImagesCardParent"  item xs={12} md={4} lg={3} style={{ display: 'grid' }}>
+    <div className="latestImagesContainer">
+     <Typography className='latestImagesHeader' variant='h5'>Latest Crypto Images</Typography>
+<div className='latestImagesCardParentBox'>
+        {tipogramImages.map((x,index)=>(
+     
+          <div key={index} component={Card} className="latestImagesCardParent">
                     <CardActionArea className='latestImagesCard'>
-                      <CardContent className="featuresSectionCardContent">
+                      <CardContent>
                         <div className="latestImagesImgBox">
                         <img src={cartoon} alt="cartoon" className="latestImagesImg" />
+                        <IconButton className='latestImagesLikeBtn' size="small" onClick={()=>setLike(!like)}>
+                          {like?<FavoriteIcon className='latestImagesLikeIconUnliked'/>:<FavoriteBorderIcon className='latestImagesLikeIconUnliked' />}
+                        </IconButton>
                         </div>
                       
-                       
-                        <Typography
-                          className='featuresSectionCardTitle'
+                       <div className="latestImagesTitleBox">
+                       <Typography
+                          className='latestImagesCardTitle'
                           gutterBottom
-                          variant='h5'
+                          variant='h6'
                         >
-                          hello
+                          {x.description}
                         </Typography>
-                        <Typography className='featuresSectionCardInfo' variant='body2'>
-                          ok man
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Grid>
-                  <Grid component={Card} className="latestImagesCardParent"  item xs={12} md={4} lg={3} style={{ display: 'grid' }}>
-                    <CardActionArea className='latestImagesCard'>
-                      <CardContent className="featuresSectionCardContent">
-                        <div className="latestImagesImgBox">
-                        <img src={cartoon} alt="cartoon" className="latestImagesImg" />
+                        <span className="latestImagesEthSymbol">
+                          ETH
+                        </span>
+                       </div>
+                       <div className="latestImagesCreatorInfoBox">
+                        <div className="latestImagesInfoImgBox">
+                        <img src={x.authorImg} alt="author-img" className="latestImagesCreatorImg"/>
+                        <div className="latestImageCreatorInfo">
+                        <Typography variant='body1'className='latestImageCreatorInfoCreator'>Creator</Typography>
+                        <Typography variant='h6'className='latestImageCreatorInfoCreatorName'>{x.authorName}</Typography>
                         </div>
-                      
-                       
-                        <Typography
-                          className='featuresSectionCardTitle'
-                          gutterBottom
-                          variant='h5'
-                        >
-                          hello
-                        </Typography>
-                        <Typography className='featuresSectionCardInfo' variant='body2'>
-                          ok man
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Grid>
-                  <Grid component={Card} className="latestImagesCardParent"  item xs={12} md={4} lg={3} style={{ display: 'grid' }}>
-                    <CardActionArea className='latestImagesCard'>
-                      <CardContent className="featuresSectionCardContent">
-                        <div className="latestImagesImgBox">
-                        <img src={cartoon} alt="cartoon" className="latestImagesImg" />
                         </div>
-                      
-                       
-                        <Typography
-                          className='featuresSectionCardTitle'
-                          gutterBottom
-                          variant='h5'
-                        >
-                          hello
-                        </Typography>
-                        <Typography className='featuresSectionCardInfo' variant='body2'>
-                          ok man
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Grid>
-                  <Grid component={Card} className="latestImagesCardParent"  item xs={12} md={4} lg={3} style={{ display: 'grid' }}>
-                    <CardActionArea className='latestImagesCard'>
-                      <CardContent className="featuresSectionCardContent">
-                        <div className="latestImagesImgBox">
-                        <img src={cartoon} alt="cartoon" className="latestImagesImg" />
+                        <div className="latestImagesInfoTipBtnBox">
+                          <Button size='small' className='latestImagesInfoTipBtn'>Tip</Button>
                         </div>
-                      
-                       
-                        <Typography
-                          className='featuresSectionCardTitle'
-                          gutterBottom
-                          variant='h5'
-                        >
-                          hello
-                        </Typography>
-                        <Typography className='featuresSectionCardInfo' variant='body2'>
-                          ok man
-                        </Typography>
+                        
+                       </div>
+                        
+                        
                       </CardContent>
                     </CardActionArea>
-                  </Grid>
-      </Grid>
+                  </div>
+
+    
+        ))
+        }
+                 
+             
+     
+                 </div>
+   
     </div>
   )
 }

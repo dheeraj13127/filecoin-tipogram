@@ -1,9 +1,9 @@
-import React,{} from 'react'
+import React from 'react'
 import HashLoader from "react-spinners/HashLoader";
 import '../../../styles/DashboardStyles/DashboardDisplay.scss'
 import {LatestImages} from '../.'
 function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,tipogramImages}) {
-
+  
   return (
     <div className='dashboardDisplayContainer'>
       {
@@ -13,7 +13,7 @@ function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,
         </div>)
         :
         (<>
-        <LatestImages/>
+        <LatestImages tipogramImages={tipogramImages}/>
         </>)
       }
       

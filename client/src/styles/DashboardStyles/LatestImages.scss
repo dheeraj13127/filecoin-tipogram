@@ -1,6 +1,12 @@
 
-
-
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+.latestImagesContainer{
+  margin-top: 100px !important;
+}
 .latestImagesImgBox{
     display: flex !important;
     justify-content: center !important;
@@ -13,13 +19,132 @@
     border-radius: 15px !important;
 }
 .latestImagesCard {
+  padding: 5px !important;
     margin-top: 20px !important;
-    background: rgba(209, 202, 202, 0.25) !important;
+    background: #272D37 !important; 
     backdrop-filter: blur( 4px ) !important;
     -webkit-backdrop-filter: blur( 4px ) !important;
-    border-radius: 10px !important;
-    border: 2px solid rgba(209, 202, 202, 0.25) !important;
+    border-radius: 15px !important;
+   
+    
   }
 .latestImagesCardParent{
     background: transparent !important;
+    margin: 10px !important;
   }
+.latestImagesCardParentBox{
+  display: flex !important;
+ overflow-x: auto !important;
+ overflow-y: hidden !important;
+
+}
+.latestImagesCardParentBox::-webkit-scrollbar {
+  background-color: transparent !important;
+
+}
+.latestImagesCardParentBox::-webkit-scrollbar-thumb {
+  background-color: rgba(209, 202, 202, 0.25) !important;
+  border-radius: 10px !important;
+}
+.latestImagesCardTitle {
+  font-family: $roboto !important;
+  font-weight: 500 !important;
+  color: white !important;
+  margin-top: 25px !important;
+  text-align: center !important;
+}
+
+.latestImagesHeader{
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  color: #ADB9C7 !important;
+}
+
+.latestImagesTitleBox{
+  display: flex !important;
+  align-items: center !important;
+  justify-content:space-between
+}
+.latestImagesEthSymbol{
+  margin-top: 25px !important;
+  background-color: #3068FA !important;
+  border-radius: 8px !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  color: white !important;
+  padding: 5px 20px !important;
+}
+.latestImagesCreatorInfoBox{
+  margin-top: 15px !important;
+}
+.latestImagesCreatorImg{
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 18px  !important;
+  box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+-webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+-moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+}
+
+.latestImageCreatorInfoCreator{
+  font-family: $roboto !important;
+  font-weight: 450 !important;
+  color: #75808C !important;
+}
+
+.latestImageCreatorInfoCreatorName{
+  font-family: $roboto !important;
+  font-weight: 450 !important;
+  color: white !important;
+  text-transform: capitalize !important;
+}
+.latestImageCreatorInfo{
+  margin-left: 15px !important;
+}
+.latestImagesInfoTipBtn{
+  background: white !important;
+  color: #272D37 !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  text-transform: capitalize  !important;
+  border-radius: 8px !important;
+}
+.latestImagesInfoImgBox{
+  display: flex !important;
+  align-items: center !important;
+  
+}
+.latestImagesCreatorInfoBox{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.latestImagesLikeBtn{
+  position: absolute !important;
+  z-index: 999 !important;
+  top: 40px !important;
+  right: 30px !important;
+  background-color: white !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .latestImagesCardParentBox::-webkit-scrollbar{
+    display: none !important;
+  }
+ 
+ }
+ @media only screen and (max-width: 600px) {
+  .latestImagesImg{
+    width:280px !important;
+    height:280px !important;
+    border-radius: 15px !important;
+}
+ 
+ }
+@media only screen and (max-width: 900px) {
+  .latestImagesContainer{
+    margin-top: 50px !important;
+  }
+ 
+ }

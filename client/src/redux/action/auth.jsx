@@ -45,9 +45,9 @@ export const userSignIn =
           payload: userId,
         });
 
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 2500);
+        
+        navigate("/dashboard");
+      
       })
       .catch((err) => {
         // toast.error("Something went wrong");

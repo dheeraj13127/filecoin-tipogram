@@ -37,6 +37,14 @@ const tipogramUserSchema=new mongoose.Schema({
   badges:{
     type:Array,
     required:true
+  },
+  likedPosts:{
+    type:Array,
+    required:true
+  },
+  imagesPosted:{
+    type:Array,
+    required:true
   }
 
 },{timestamps:true})

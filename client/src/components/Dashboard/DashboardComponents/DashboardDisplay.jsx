@@ -13,7 +13,7 @@ function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,
         </div>)
         :
         (<>
-        <LatestImages tipogramImages={tipogramImages}/>
+        <LatestImages tipogramImages={tipogramImages} metamaskAccount={metamaskAccount} tipogramContract={tipogramContract} userData={userData}/>
         </>)
       }
       

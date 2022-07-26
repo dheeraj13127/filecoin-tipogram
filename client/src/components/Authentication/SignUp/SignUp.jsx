@@ -61,7 +61,9 @@ else if(user.password.length<6){
         profileImage:proUrl,
         likeCount:0,
         tipsReceived:0,
-        badges:[]
+        badges:[],
+        likedPosts:[],
+        imagesPosted:[]
       }
       
       dispatch(userSignUp(data,navigate))

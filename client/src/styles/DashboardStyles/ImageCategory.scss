@@ -1,24 +1,46 @@
-
 $nunito: "Nunito", sans-serif;
 $inter: "Inter", sans-serif;
 $poppins: "Poppins", sans-serif;
 $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
-.latestImagesContainer{
+
+.imageCategoryFilterBtnBox{
+    margin-top: 30px !important;
+}
+
+.imageCategoryFilterBtn{
+    background:white !important;
+    color: black !important;
+    margin: 0px 10px !important;
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+}
+
+
+.imageCategoryFilterBtnActive{
+    background-color: #2E64F0 !important;
+    color: white !important;
+    margin: 0px 10px !important;
+    text-transform: capitalize !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+}
+.imageCategoryContainer{
   margin-top: 100px !important;
 }
-.latestImagesImgBox{
+.imageCategoryImgBox{
     display: flex !important;
     justify-content: center !important;
     // #272D37
 }
 
-.latestImagesImg{
+.imageCategoryImg{
     width:320px !important;
     height:320px !important;
     border-radius: 15px !important;
 }
-.latestImagesCard {
+.imageCategoryCard {
   padding: 5px !important;
     margin-top: 20px !important;
     background: #272D37 !important; 
@@ -28,25 +50,25 @@ $openSans: "Open Sans", sans-serif;
    
     
   }
-.latestImagesCardParent{
+.imageCategoryCardParent{
     background: transparent !important;
     margin: 10px !important;
   }
-.latestImagesCardParentBox{
+.imageCategoryCardParentBox{
   display: flex !important;
  overflow-x: auto !important;
  overflow-y: hidden !important;
 
 }
-.latestImagesCardParentBox::-webkit-scrollbar {
+.imageCategoryCardParentBox::-webkit-scrollbar {
   background-color: transparent !important;
 
 }
-.latestImagesCardParentBox::-webkit-scrollbar-thumb {
+.imageCategoryCardParentBox::-webkit-scrollbar-thumb {
   background-color: rgba(209, 202, 202, 0.25) !important;
   border-radius: 10px !important;
 }
-.latestImagesCardTitle {
+.imageCategoryCardTitle {
   font-family: $roboto !important;
   font-weight: 500 !important;
   color: white !important;
@@ -54,18 +76,18 @@ $openSans: "Open Sans", sans-serif;
   text-align: center !important;
 }
 
-.latestImagesHeader{
+.imageCategoryHeader{
   font-family: $poppins !important;
   font-weight: 600 !important;
   color: #ADB9C7 !important;
 }
 
-.latestImagesTitleBox{
+.imageCategoryTitleBox{
   display: flex !important;
   align-items: center !important;
   justify-content:space-between
 }
-.latestImagesEthSymbol{
+.imageCategoryEthSymbol{
   margin-top: 25px !important;
   background-color: #3068FA !important;
   border-radius: 8px !important;
@@ -74,10 +96,10 @@ $openSans: "Open Sans", sans-serif;
   color: white !important;
   padding: 5px 20px !important;
 }
-.latestImagesCreatorInfoBox{
+.imageCategoryCreatorInfoBox{
   margin-top: 15px !important;
 }
-.latestImagesCreatorImg{
+.imageCategoryCreatorImg{
   width: 52px !important;
   height: 52px !important;
   border-radius: 18px  !important;
@@ -101,7 +123,7 @@ $openSans: "Open Sans", sans-serif;
 .latestImageCreatorInfo{
   margin-left: 15px !important;
 }
-.latestImagesInfoTipBtn{
+.imageCategoryInfoTipBtn{
   background: white !important;
   color: #272D37 !important;
   font-family: $poppins !important;
@@ -109,19 +131,19 @@ $openSans: "Open Sans", sans-serif;
   text-transform: capitalize  !important;
   border-radius: 8px !important;
 }
-.latestImagesInfoImgBox{
+.imageCategoryInfoImgBox{
   display: flex !important;
   align-items: center !important;
   
 }
-.latestImagesCreatorInfoBox{
+.imageCategoryCreatorInfoBox{
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
 }
 
-.latestImagesLikeBtn{
-  position: absolute !important;
+.imageCategoryLikeBtn{
+    position: absolute !important;
   z-index: 999 !important;
   top: 35px !important;
   right: 30px !important;
@@ -133,25 +155,25 @@ $openSans: "Open Sans", sans-serif;
 
 
 @media only screen and (max-width: 1200px) {
-  .latestImagesCardParentBox::-webkit-scrollbar{
+  .imageCategoryCardParentBox::-webkit-scrollbar{
     display: none !important;
   }
  
  }
  @media only screen and (max-width: 600px) {
-  .latestImagesImg{
+  .imageCategoryImg{
     width:280px !important;
     height:280px !important;
     border-radius: 15px !important;
 }
-.latestImagesHeader{
+.imageCategoryHeader{
   font-size: 20px !important;
   text-align: center !important;
 }
  
  }
 @media only screen and (max-width: 900px) {
-  .latestImagesContainer{
+  .imageCategoryContainer{
     margin-top: 50px !important;
   }
  

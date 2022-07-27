@@ -22,12 +22,6 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "tipAmount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
 				"internalType": "address payable",
 				"name": "author",
 				"type": "address"
@@ -58,9 +52,9 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "createdAt",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "authorId",
+				"type": "string"
 			}
 		],
 		"name": "ImageCreated",
@@ -89,12 +83,6 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "tipAmount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
 				"internalType": "address payable",
 				"name": "author",
 				"type": "address"
@@ -125,9 +113,9 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "createdAt",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "authorId",
+				"type": "string"
 			}
 		],
 		"name": "ImageLiked",
@@ -156,12 +144,6 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "tipAmount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
 				"internalType": "address payable",
 				"name": "author",
 				"type": "address"
@@ -192,13 +174,85 @@
 			},
 			{
 				"indexed": false,
-				"internalType": "uint256",
-				"name": "createdAt",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "authorId",
+				"type": "string"
 			}
 		],
 		"name": "ImageTipped",
 		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "imageCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "images",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "hash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "address payable",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "likes",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "authorImg",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "authorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "imageType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "authorId",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"inputs": [
@@ -252,88 +306,16 @@
 				"internalType": "string",
 				"name": "_imageType",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_authorId",
+				"type": "string"
 			}
 		],
 		"name": "uploadImage",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "imageCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "images",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "hash",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tipAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address payable",
-				"name": "author",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "likes",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "authorImg",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "authorName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "imageType",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "createdAt",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	}
 ]

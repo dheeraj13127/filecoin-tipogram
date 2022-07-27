@@ -1,4 +1,4 @@
-import {USER_SIGIN_SUCCESS,USER_SIGNUP_SUCCESS,LOAD_TIPOGRAM_CONTRACT,FETCH_OWNER_ACCOUNT,GET_USER_PROFILE,UPLOAD_IMAGE,FETCH_TIPOGRAM_IMAGES} from '../constants/constants'
+import {USER_SIGIN_SUCCESS,USER_SIGNUP_SUCCESS,LOAD_TIPOGRAM_CONTRACT,FETCH_OWNER_ACCOUNT,GET_USER_PROFILE,UPLOAD_IMAGE,FETCH_TIPOGRAM_IMAGES,UPDATE_POSTS_LIKES} from '../constants/constants'
 const initState={
     signUpId:"",
     signInId:"",
@@ -6,7 +6,8 @@ const initState={
     ownerAccount:null,
     userData:null,
     uploadedImageData:null,
-    tipogramImages:null
+    tipogramImages:null,
+    postLikes:null
 }
 
 export const rootReducer=(state=initState,action)=>{
@@ -50,6 +51,11 @@ export const rootReducer=(state=initState,action)=>{
                 tipogramImages:action.payload,
             })
         }
+        case UPDATE_POSTS_LIKES:{
+          return Object.assign({},state,{
+              postLikes:action.payload,
+          })
+      }
         default:
             return state
     }

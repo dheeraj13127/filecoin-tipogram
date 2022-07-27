@@ -24,6 +24,7 @@ exports.updateUserLikedPosts=async(req,res)=>{
 }
 
 
+
 exports.updateImagesPosted=async(req,res)=>{
   try{
     await MestifyUser.findOneAndUpdate({_id:req.body.userId},{
@@ -39,6 +40,58 @@ exports.updateImagesPosted=async(req,res)=>{
        return res.status(200).json(result)
       }
     })
+    
+  }
+  catch(e){
+
+  }
+}
+
+
+exports.updateTipsReceived=async(req,res)=>{
+ 
+ 
+  try{
+    await MestifyUser.findById({_id:req.body.authorId}).then(async(resp)=>{
+     
+      await MestifyUser.findOneAndUpdate({_id:req.body.authorId},{
+        tipsReceived:parseFloat(req.body.tipAmt)+parseFloat(resp.tipsReceived)
+    },{upsert:true,returnDocument:true},(err,result)=>{
+      if(err){
+        return res.status(400).json(err)
+      
+      }
+      else{
+       return res.status(200).json(result)
+      }
+    })
+    })
+
+    
+  }
+  catch(e){
+
+  }
+}
+exports.updateAuthorLikes=async(req,res)=>{
+
+ 
+  try{
+    await MestifyUser.findById({_id:req.params.authorId}).then(async(resp)=>{
+     
+      await MestifyUser.findOneAndUpdate({_id:req.params.authorId},{
+        likeCount:parseInt(resp.likeCount)+1
+    },{upsert:true,returnDocument:true},(err,result)=>{
+      if(err){
+        return res.status(400).json(err)
+      
+      }
+      else{
+       return res.status(200).json(result)
+      }
+    })
+    })
+
     
   }
   catch(e){

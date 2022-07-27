@@ -1,4 +1,4 @@
-import { FETCH_OWNER_ACCOUNT, LOAD_TIPOGRAM_CONTRACT, UPLOAD_IMAGE, FETCH_TIPOGRAM_IMAGES, UPDATE_POSTS_LIKES } from '../constants/constants'
+import { FETCH_OWNER_ACCOUNT, LOAD_TIPOGRAM_CONTRACT, UPLOAD_IMAGE, FETCH_TIPOGRAM_IMAGES, UPDATE_POSTS_LIKES, UPDATE_AUTHOR_LIKES } from '../constants/constants'
 import toast from "react-hot-toast";
 import axios from 'axios';
 const web3_utils = require('web3-utils');
@@ -88,7 +88,7 @@ export const uploadImage = (data, tipogramContract, userData, metamaskAccount) =
 	toast("Will take few seconds", {
 		icon: "⏳",
 	});
-	await tipogramContract.methods.uploadImage(data.imgUrl, data.title, userData.profileImage, userData.userName, data.imgType).send({ from: metamaskAccount, gas: 1000000 })
+	await tipogramContract.methods.uploadImage(data.imgUrl, data.title, userData.profileImage, userData.userName, data.imgType,userData._id).send({ from: metamaskAccount, gas: 1000000 })
 		.then(async (res) => {
 			let userNewData = {
 				userId: userData._id,
@@ -112,12 +112,12 @@ export const uploadImage = (data, tipogramContract, userData, metamaskAccount) =
 
 		})
 		.catch(err => {
-			console.log(err)
+			
 			toast.error("Transaction failed")
 		})
 
 }
-export const updatePostLikes = (data, tipogramContract, metamaskAccount, userData) => async (dispatch) => {
+export const updatePostLikes = (data, tipogramContract, metamaskAccount, userData,authorId) => async (dispatch) => {
 
 	await tipogramContract.methods.likeImage(data).send({ from: metamaskAccount, gas: 0 })
 		.then(async (res) => {
@@ -126,14 +126,22 @@ export const updatePostLikes = (data, tipogramContract, metamaskAccount, userDat
 				postId: data
 			}
 			await axios.post("https://tipogram.herokuapp.com/dashboard/updateUserLikedposts", userNewData)
-				.then(resp => {
-					toast(`You liked ${userData.userName}'s post`, {
+				.then(async(resp) => {
+					await axios.put(`https://tipogram.herokuapp.com/dashboard/updateAuthorLikes/${authorId}`)
+					.then(response=>{
+						toast(`You liked the post`, {
+						})
+						dispatch({
+							type: UPDATE_POSTS_LIKES,
+							payload: resp
+						})
+						window.location.reload(false);
 					})
-					dispatch({
-						type: UPDATE_POSTS_LIKES,
-						payload: resp
+					.catch(err => {
+						toast.error("Something went wrong")
 					})
-					window.location.reload(false);
+
+				
 				})
 				.catch(err => {
 					toast.error("Something went wrong")
@@ -143,26 +151,59 @@ export const updatePostLikes = (data, tipogramContract, metamaskAccount, userDat
 
 		})
 		.catch(err => {
-			console.log(err)
+			
 			toast.error("Transaction failed")
 		})
 
 }
 
-export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt) => async (dispatch) => {
-	const newTipAmt = web3_utils.toWei(tipAmt);
-	await tipogramContract.methods.tipImage(data).send({ from: metamaskAccount, value: newTipAmt, gas: 0 })
+export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt,authorId) => async (dispatch) => {
+	const newTipAmt = web3_utils.toWei(tipAmt,"ether");
+	
+	await tipogramContract.methods.tipImage(data).send({ from: metamaskAccount, value: newTipAmt, gas: 1000000 })
 		.then(async (res) => {
-
-			toast("Thank you for the tip", {
-				icon: "😊",
-
+			let newData={
+				authorId:authorId,
+				tipAmt:tipAmt,
+			}
+			await axios.post("https://tipogram.herokuapp.com/dashboard/updateTipsReceived", newData)
+			.then(resp=>{
+				
+				toast("Thank you for the tip", {
+					icon: "😊",
+	
+				})
+				setTimeout(()=>{
+					window.location.href="/dashboard"
+				},2000)
+	
 			})
-
+			.catch(err=>{
+				console.log(err)
+				toast.error("Something went wrong")
+			})
+			
 
 		})
 		.catch(err => {
-			console.log(err)
+			
+			toast.error("Transaction failed")
+		})
+
+}
+export const updateAuthorLikes= (authorId) => async (dispatch) => {
+	
+	
+	await axios.put(`https://tipogram.herokuapp.com/dashboard/updateAuthorLikes/${authorId}`)
+		.then(async (res) => {
+			console.log(res)
+			dispatch({
+				type: UPDATE_AUTHOR_LIKES,
+				payload: res
+			})
+		})
+		.catch(err => {
+			
 			toast.error("Transaction failed")
 		})
 

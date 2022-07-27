@@ -1,30 +1,34 @@
-import React,{useState} from 'react'
-import {Typography,Card,CardActionArea,CardContent, Button, IconButton, Modal, Box, TextField} from '@mui/material'
+import React from 'react'
+import {Typography,Card,CardActionArea,CardContent, Button} from '@mui/material'
 import '../../../../styles/DashboardStyles/LatestImages.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {useDispatch} from 'react-redux'
-import { tipImages, updatePostLikes } from '../../../../redux/action/blockchain';
+import {updatePostLikes } from '../../../../redux/action/blockchain';
+import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast'
 function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}) {
   const dispatch=useDispatch()
-  const [open, setOpen] = useState(false);
-  const handleOpen = (id) =>{ 
+  const navigate=useNavigate()
+  const handleOpen = (id,authorId) =>{ 
+    
     if(userData&&userData.imagesPosted.includes(id)){
+   
       toast("You can't tip yourself",{
         icon:"🤗"
       })
     }
     else{
-      setOpen(true)
+      navigate(`/dashboard/tipimage/${id}/${authorId}`)
+      
     }
    
   }
-  const handleClose = () => setOpen(false);
-  const [tipAmt,setTipAmt]=useState("")
+console.log(tipogramImages)
+
  
  
-  const handleUpdatePostLikes=(id)=>{
+  const handleUpdatePostLikes=(id,authorId)=>{
     if(userData&&userData.likedPosts.includes(id)){
       toast("You have already liked this post",{
         icon:"🤗"
@@ -36,41 +40,29 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
       })
     }
     else{
-      dispatch(updatePostLikes(id,tipogramContract,metamaskAccount,userData))
+      dispatch(updatePostLikes(id,tipogramContract,metamaskAccount,userData,authorId))
+     
     }
 
   }
 
 
-  const handleImageTip=(id)=>{
-    
-    if(tipAmt===""||tipAmt==="0"||tipAmt==null){
-      toast("Please enter a valid tip amount",{
-        icon:"❗️"
-      })
-    }
-    
- 
-    else{
-      dispatch(tipImages(id,tipogramContract,metamaskAccount,tipAmt))
-    }
-     
-  } 
+
 
   return (
     <div className="latestImagesContainer">
      <Typography className='latestImagesHeader' variant='h5'>Latest Crypto Images</Typography>
 <div className='latestImagesCardParentBox'>
-        {tipogramImages.sort((a,b)=>b.createdAt-a.createdAt).map((x,index)=>(
+        {tipogramImages.sort((a,b)=>b.id-a.id).map((x,index)=>(
      
           <div key={index} component={Card} className="latestImagesCardParent">
                     <CardActionArea className='latestImagesCard'>
                       <CardContent>
                         <div className="latestImagesImgBox">
                         <img src={x.hash} loading="eager" alt="cartoon" className="latestImagesImg" />
-                        <IconButton className='latestImagesLikeBtn' size="small" onClick={()=>handleUpdatePostLikes(x.id)}>
+                        <span onClick={()=>handleUpdatePostLikes(x.id,x.authorId)} className="latestImagesLikeBtn">
                           {userData&&userData.likedPosts.includes(x.id)?<FavoriteIcon color="error" className='latestImagesLikeIconUnliked'/>:<FavoriteBorderIcon className='latestImagesLikeIconUnliked' />}
-                        </IconButton>
+                        </span>
                         </div>
                       
                        <div className="latestImagesTitleBox">
@@ -78,7 +70,7 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
                           className='latestImagesCardTitle'
                           gutterBottom
                           variant='h6'
-                        >
+                        > 
                           {x.description}
                         </Typography>
                         <span className="latestImagesEthSymbol">
@@ -94,19 +86,9 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
                         </div>
                         </div>
                         <div className="latestImagesInfoTipBtnBox">
-                          <Button size='small' className='latestImagesInfoTipBtn' onClick={()=>handleOpen(x.id)}>Tip</Button>
+                          <Button component="span" size='small' className='latestImagesInfoTipBtn' onClick={()=>handleOpen(x.id,x.authorId)}>Tip</Button>
                         </div>
-                        <Modal
-                          open={open}
-                          onClose={handleClose}
-                          aria-labelledby="modal-modal-title"
-                          aria-describedby="modal-modal-description"
-                        >
-                        <Box  className="latestImagesTipBox">
-                        <TextField type="number" value={tipAmt} onChange={(e)=>setTipAmt(e.target.value)} id="outlined-basic" label="Tip Amount" variant="outlined" />
-                        <Button onClick={()=>handleImageTip(x.id)}  size='small' className='latestImagesTipBoxBtn'>Tip</Button>
-                        </Box>
-                        </Modal>
+          
                         
                        </div>
                         

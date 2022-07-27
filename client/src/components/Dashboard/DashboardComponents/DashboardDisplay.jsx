@@ -1,7 +1,7 @@
 import React from 'react'
 import HashLoader from "react-spinners/HashLoader";
 import '../../../styles/DashboardStyles/DashboardDisplay.scss'
-import {LatestImages} from '../.'
+import {LatestImages,ImageCategory} from '../.'
 function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,tipogramImages}) {
   
   return (
@@ -14,6 +14,7 @@ function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,
         :
         (<>
         <LatestImages tipogramImages={tipogramImages} metamaskAccount={metamaskAccount} tipogramContract={tipogramContract} userData={userData}/>
+        <ImageCategory tipogramImages={tipogramImages} metamaskAccount={metamaskAccount} tipogramContract={tipogramContract} userData={userData}/>
         </>)
       }
       

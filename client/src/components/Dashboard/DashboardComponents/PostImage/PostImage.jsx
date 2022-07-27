@@ -45,7 +45,8 @@ const handleSignUpSubmit=async(e)=>{
       const data={
         title:post.title,
         imgType:post.imgType,
-        imgUrl:proUrl
+        imgUrl:proUrl,
+        
       }
       dispatch(uploadImage(data,tipogramContract,userData,metamaskAccount,navigate))
       setPost({imgType:"",title:"",tipAmount:""})
@@ -99,7 +100,7 @@ const handleSignUpSubmit=async(e)=>{
                     <MenuItem value={"Sport"}>Sport</MenuItem>
                     <MenuItem value={"Cartoon"}>Cartoon</MenuItem>
                     <MenuItem value={"Tech"}>Tech</MenuItem>
-                    <MenuItem value={"Health"}>Health</MenuItem>
+                    <MenuItem value={"Nature"}>Nature</MenuItem>
                     <MenuItem value={"Movie"}>Movie</MenuItem>
                     <MenuItem value={"Music"}>Music</MenuItem>
 

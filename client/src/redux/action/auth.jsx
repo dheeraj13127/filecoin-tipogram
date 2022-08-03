@@ -78,7 +78,7 @@ export const userSignIn =
 
   export const getAllUsers = () => async (dispatch) => {
     await axios
-      .get("http://localhost:5000/auth/getAllUsers")
+      .get("https://tipogram.herokuapp.com/auth/getAllUsers")
       .then((res) => {
         
         dispatch({
@@ -99,7 +99,7 @@ export const userSignIn =
       userId:userId
     }
     await axios
-    .put(`http://localhost:5000/dashboard/updateBadges/${userId}`, data)
+    .put(`https://tipogram.herokuapp.com/dashboard/updateBadges/${userId}`, data)
     .then((res) => {
       toast("New badge unlocked. Visit your profile to view it",{
         icon: "🤩",

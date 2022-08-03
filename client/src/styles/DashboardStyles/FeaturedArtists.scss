@@ -1,0 +1,125 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.featuredArtistsContainer{
+    margin-top: 100px !important;
+  }
+.featuredArtistsHeader{
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    color: #ADB9C7 !important;
+  }
+  .featuredArtistsCardParentBox{
+    display: flex !important;
+   overflow-x: auto !important;
+   overflow-y: hidden !important;
+  
+  }
+  .featuredArtistsCardParentBox::-webkit-scrollbar {
+    background-color: transparent !important;
+  
+  }
+  .featuredArtistsCardParentBox::-webkit-scrollbar-thumb {
+    background-color: rgba(209, 202, 202, 0.25) !important;
+    border-radius: 10px !important;
+  }
+  .featuredArtistsCardParent{
+    background: transparent !important;
+    margin: 10px !important;
+  }
+  .featuredArtistsCard {
+    padding: 5px !important;
+      margin-top: 20px !important;
+      background: #272D37 !important; 
+      backdrop-filter: blur( 4px ) !important;
+      -webkit-backdrop-filter: blur( 4px ) !important;
+      border-radius: 15px !important;
+     
+      
+    }
+    .featuredArtistsProfileImg{
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 18px  !important;
+        box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+      -webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+      -moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+      margin-right: 70px !important;
+    }
+    .featuredArtistsImgBox{
+        display: flex !important;
+        align-items: center !important;
+        justify-content:space-between !important;
+    }
+    .featuredArtistsLikeBtn{
+        color: black !important;
+        background-color: white !important; 
+        border-radius: 8px !important;
+    }
+    .featuredArtistsLikeIcon{
+        font-size: 15px !important;
+        margin-right: 5px !important;
+    }
+    .featuredArtistsPaintIcon{
+        font-size: 15px !important;
+        margin-right: 5px !important;
+        color: #2E64F0 !important;
+    }
+    .featuredArtistsNameBox{
+        display: flex !important;
+        align-items: center !important;
+        justify-content:space-between !important;
+        margin-top: 15px !important;
+    }
+    .featuredArtistsCreatorName{
+        font-family: $roboto !important;
+        font-weight: 450 !important;
+        color: white !important;
+        text-transform: capitalize !important;
+        margin-right: 70px !important;
+    }
+    .featuredArtistsBadgeEmoji{
+        color: #FFD700 !important;
+    }
+    .featuredArtistsBadgeMilitary
+    {
+        color: #0096FF !important;
+    }
+    .featuredArtistsBadgeVolunteer{
+        color: #DE3163 !important;
+    }
+    .featuredArtistsBadgeWorkspace{
+        color: #d4d1d1 !important;
+    }
+    .featuredArtistsVerified{
+      color: white !important;
+    }
+    .featuredArtistsBadgesBox{
+        margin-top: 25px !important;
+    }
+    .featuredArtistsBadgeIcon{
+        margin: 0px 10px !important;
+    }
+    @media only screen and (max-width: 1200px) {
+        .featuredArtistsCardParentBox::-webkit-scrollbar{
+          display: none !important;
+        }
+       
+       }
+       @media only screen and (max-width: 600px) {
+       
+      .featuredArtistsHeader{
+        font-size: 20px !important;
+        text-align: center !important;
+      }
+       
+       }
+      @media only screen and (max-width: 900px) {
+        .featuredArtistsContainer{
+          margin-top: 50px !important;
+        }
+       
+       }

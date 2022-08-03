@@ -65,3 +65,14 @@ exports.getProfile = async (req, res) => {
 
   }
 };
+
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    await MestifyUser.find().then((resp) =>
+      res.status(200).json({ users: resp })
+    );
+  } catch (e) {
+    
+  }
+}

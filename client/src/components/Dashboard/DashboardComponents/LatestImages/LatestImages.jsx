@@ -24,7 +24,7 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
     }
    
   }
-console.log(tipogramImages)
+
 
  
  

@@ -100,7 +100,7 @@ function ImagesCategory({ tipogramImages, metamaskAccount, tipogramContract, use
                     </div>
                   </div>
                   <div className="imageCategoryInfoTipBtnBox">
-                    <Button size='small' className='imageCategoryInfoTipBtn' onClick={() => handleOpen(x.id,x.authorId)}>Tip</Button>
+                    <Button component="span" size='small' className='imageCategoryInfoTipBtn' onClick={() => handleOpen(x.id,x.authorId)}>Tip</Button>
                   </div>
                 </div>
               </CardContent>

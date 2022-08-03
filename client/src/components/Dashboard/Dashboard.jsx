@@ -4,7 +4,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import { Routes, Route,useNavigate } from "react-router-dom";
 import '../../styles/DashboardStyles/Dashboard.scss'
 import {DashboardDisplay,MyProfile,PostImage,DashboardNavbar,TipImage} from './index'
-import {getUserProfile} from '../../redux/action/auth'
+import {getAllUsers, getUserProfile} from '../../redux/action/auth'
 import { connectWallet } from '../../redux/action/blockchain';
 import {ethers} from 'ethers'
 import {LandingFooter} from '../Landing'
@@ -59,16 +59,21 @@ function Dashboard() {
     let userData = useSelector(
       (state) => state.userData
     );
- 
-                                    
+    useEffect(()=>{
+      dispatch(getAllUsers())
+    },[])// eslint-disable-line react-hooks/exhaustive-deps 
+    let tipogramUsers = useSelector(
+      (state) => state.tipogramUsers
+    );
   
   return (
     <>
     <div className='dashboardContainer'>
+     
       <DashboardNavbar tipogramContract={tipogramContract} userData={userData} ethBalance={userBalance} metamaskAccount={defaultAccount}/>
     <Routes>
      <Route path='/' 
-     element={<DashboardDisplay tipogramImages={images}  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
+     element={<DashboardDisplay tipogramUserId={tipogramUserId} tipogramUsers={tipogramUsers} tipogramImages={images}  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
     <Route path='/myProfile' element={<MyProfile/>}/>
     <Route path='/postImage' element={<PostImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>}/>
     <Route path='/tipImage/:id/:authorId' element={<TipImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>} />

@@ -98,3 +98,34 @@ exports.updateAuthorLikes=async(req,res)=>{
 
   }
 }
+
+
+exports.updateBadges=async(req,res)=>{
+ 
+  try{
+    await MestifyUser.findById({_id:req.params.userId}).then(async(resp)=>{
+      if(!resp.badges.includes(req.body.badgesData)){
+            await MestifyUser.findOneAndUpdate({_id:req.params.userId},{
+      $push:{
+        badges:req.body.badgesData
+      }
+    },{upsert:true,returnDocument:true},(err,result)=>{
+      if(err){
+      
+        return res.status(400).json(err)
+      
+      }
+      else{
+       return res.status(200).json({message:"New badge unlocked"})
+      }
+    })
+      }
+      
+    })
+
+    
+  }
+  catch(e){
+
+  }
+}

@@ -27,7 +27,7 @@ function FeaturedArtists({ tipogramUsers}) {
                </div>
                <div className="featuredArtistsNameBox">
                <Typography variant='h6' className='featuredArtistsCreatorName'>{x.userName}</Typography>
-               <Tooltip title="Crypto images posted" placement='top'>
+               <Tooltip title="Total posts" placement='top'>
                 <Button size='small' className="featuredArtistsLikeBtn"><ColorLensIcon color="error" className='featuredArtistsPaintIcon'/>{x.imagesPosted.length}</Button>
                 </Tooltip>
                </div>

@@ -74,7 +74,7 @@ function Dashboard() {
     <Routes>
      <Route path='/' 
      element={<DashboardDisplay tipogramUserId={tipogramUserId} tipogramUsers={tipogramUsers} tipogramImages={images}  tipogramContract={tipogramContract} errorMessage={errorMessage} metamaskAccount={defaultAccount} ethBalance={userBalance} userData={userData}/>}/>   
-    <Route path='/myProfile' element={<MyProfile/>}/>
+    <Route path='/myProfile' element={<MyProfile tipogramUserId={tipogramUserId} tipogramUsers={tipogramUsers} tipogramImages={images}  tipogramContract={tipogramContract} userData={userData}/>}/>
     <Route path='/postImage' element={<PostImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>}/>
     <Route path='/tipImage/:id/:authorId' element={<TipImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>} />
     </Routes>     

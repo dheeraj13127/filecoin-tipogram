@@ -1,4 +1,4 @@
-import {USER_SIGNUP_SUCCESS,USER_SIGIN_SUCCESS,GET_USER_PROFILE,GET_ALL_USERS, UPDATE_BADGES} from '../constants/constants'
+import {USER_SIGNUP_SUCCESS,USER_SIGIN_SUCCESS,GET_USER_PROFILE,GET_ALL_USERS, UPDATE_BADGES, UPDATE_USER_PROFILE} from '../constants/constants'
 import axios from 'axios'
 import toast from "react-hot-toast";
 
@@ -106,6 +106,29 @@ export const userSignIn =
       })
       dispatch({
         type:UPDATE_BADGES,
+        payload: res.data.message,
+      });
+    })
+    .catch((err) =>{
+      
+     toast.error("Something went wrong")
+    });
+  }
+
+  export const updateUserProfile = (userId,userName,profileImage) => async (dispatch) => {
+    let data={
+      userName:userName,
+      profileImage:profileImage,
+    }
+    await axios
+    .put(`https://tipogram.herokuapp.com/auth/updateUserProfile/${userId}`, data)
+    .then((res) => {
+      toast.success("Profile updated successfully")
+     setTimeout(() => {
+      window.location.reload();
+     },1500)
+      dispatch({
+        type:UPDATE_USER_PROFILE,
         payload: res.data.message,
       });
     })

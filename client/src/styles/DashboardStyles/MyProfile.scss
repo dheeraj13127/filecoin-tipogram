@@ -20,17 +20,17 @@ $openSans: "Open Sans", sans-serif;
     border-radius: 50% !important;
     width: 225px !important;
     height: 225px !important;
-    box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
-    -webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
-    -moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+    box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -webkit-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
 }
 
 .myProfileContainerBox {
     background-color: #272D37 !important;
     padding: 25px !important;
-    box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
--webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
--moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+    box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -webkit-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
     border-radius: 10px !important;
 }
 
@@ -44,80 +44,97 @@ $openSans: "Open Sans", sans-serif;
     border-radius: 10px !important;
 }
 
-.myProfileStatsBox{
+.myProfileStatsBox {
     margin-top: 30px !important;
     border: 2px solid white !important;
     border-radius: 8px !important;
     padding: 15px !important;
 }
 
-.myProfileBadgesBox{
+.myProfileBadgesBox {
     margin-top: 30px !important;
     border: 2px solid white !important;
     border-radius: 8px !important;
     padding: 15px !important;
 }
-.myProfileStatsTitle{
-    font-family: $poppins !important;
-    font-weight: 600 !important;
-    color: white !important;
-  
-   
-}
 
-.myProfileBadgesTitle{
-    font-family: $poppins !important;
+.myProfileStatsTitle {
+    font-family: $poppins  !important;
     font-weight: 600 !important;
     color: white !important;
 
-    
+
 }
 
-.myProfileStatsDataBox{
+.myProfileBadgesTitle {
+    font-family: $poppins  !important;
+    font-weight: 600 !important;
+    color: white !important;
+
+
+}
+
+.myProfileStatsDataBox {
     margin-top: 15px !important;
 }
-.myProfileStatsDetail{
+
+.myProfileStatsDetail {
     background-color: white !important;
     margin: 0px 15px !important;
     color: #02050E !important;
-    font-family: $poppins !important;
+    font-family: $poppins  !important;
     font-weight: 600 !important;
-    
+
 }
-.myProfileStatsLikeIcon{
+
+.myProfileStatsLikeIcon {
     font-size: 15px !important;
     margin-right: 5px !important;
 }
-.myProfileStatsPaintIcon{
+
+.myProfileStatsPaintIcon {
     font-size: 15px !important;
     margin-right: 5px !important;
     color: #2E64F0 !important;
 }
 
-.myProfileBadgesDataBox{
+.myProfileBadgesDataBox {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     margin-top: 15px !important;
 }
 
-.myProfileBadgesIconDisabled{
+.myProfileBadgesIconDisabled {
     opacity: 0.2 !important;
 }
+
+.myProfileEditButtonBox {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.myProfileEditButton {
+    color: white  !important;
+}
+
 @media only screen and (max-width: 768px) {
     .myProfileContainer {
         margin: 70px 0px !important;
     }
-    .myProfileUserImg{
-        width:150px !important;
-        height:150px !important;
+
+    .myProfileUserImg {
+        width: 150px !important;
+        height: 150px !important;
     }
-    .myProfileStatsDetail{
+
+    .myProfileStatsDetail {
         margin: 0px 10px !important;
         font-size: 12px !important;
     }
-    .myProfileUserName{
+
+    .myProfileUserName {
         font-size: 15px !important;
     }
-   
-   }
+
+}

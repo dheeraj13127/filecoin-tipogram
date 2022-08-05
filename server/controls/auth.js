@@ -76,3 +76,24 @@ exports.getAllUsers = async (req, res) => {
     
   }
 }
+
+
+exports.updateUserProfile = async (req, res) => {
+  try{
+      await MestifyUser.findOneAndUpdate({_id:req.params.userId},{
+        userName:req.body.userName,
+        profileImage:req.body.profileImage,
+      },{returnDocument:true,new:true},(err,result)=>{
+        if(err){
+          return res.status(400).json(err)
+        
+        }
+        else{
+         return res.status(200).json(result)
+        }
+      })
+  }
+  catch(e){
+
+  }
+}

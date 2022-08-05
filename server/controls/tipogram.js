@@ -126,6 +126,6 @@ exports.updateBadges=async(req,res)=>{
     
   }
   catch(e){
-
+    
   }
 }

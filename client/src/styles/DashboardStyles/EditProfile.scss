@@ -1,0 +1,41 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+.editProfileBox{
+    margin-top: 20px !important;
+    
+}
+.editProfileImageUpload{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.editProfileUploadFileBox{
+    display: flex   !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+}
+
+.editProfileFileLabel{
+    color: white !important;
+}
+.editProfileUploadFileBoxForm{
+    margin-top: 20px !important;
+    border: 1px dotted white !important;
+    padding: 5px !important;
+}
+.editProfileInput{
+    margin-top: 25px !important;
+    color: white !important;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.editProfileUpdateBtn{
+    background-color: black !important;
+    color: white !important;
+    margin-top: 30px !important;
+    text-transform: capitalize  !important;
+}

@@ -18,7 +18,8 @@ function BadgesIssuer({userData,tipogramUserId}) {
               dispatch(updateUserBadges(tipogramUserId, badgesData[2].id))
               }
             let x=new Date(userData&&userData.createdAt)
-            if(x.getMonth()===6&&x.getDate()===16&&x.getFullYear()===2023){
+            let y=new Date(userData&&userData.createdAt)
+            if(x.getMonth()===y.getMonth()&&x.getDate()===y.getDate()&&x.getFullYear()===2023){
               dispatch(updateUserBadges(tipogramUserId, badgesData[3].id))
             }
        

@@ -7,7 +7,12 @@ app.use(express.json())
 app.use(cors())
 const authRoutes=require('./routes/auth')
 const dashboardRoutes=require('./routes/tipogram')
-
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 mongoose.connect(process.env.DATABASE,{
   useNewUrlParser:true,
   useUnifiedTopology:true,

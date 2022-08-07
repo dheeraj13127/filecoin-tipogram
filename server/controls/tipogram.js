@@ -105,7 +105,7 @@ exports.updateBadges=async(req,res)=>{
   try{
     await MestifyUser.findById({_id:req.body.userId}).then(async(resp)=>{
       if(!resp.badges.includes(req.body.badgesData)){
-            await MestifyUser.findOneAndUpdate({_id:req.params.userId},{
+            await MestifyUser.findOneAndUpdate({_id:req.body.userId},{
       $push:{
         badges:req.body.badgesData
       }

@@ -99,7 +99,7 @@ export const userSignIn =
       userId:userId
     }
     await axios
-    .put(`https://tipogram.herokuapp.com/dashboard/updateBadges/${userId}`, data)
+    .post(`https://tipogram.herokuapp.com/dashboard/updateBadges`, data)
     .then((res) => {
       toast("New badge unlocked. Visit your profile to view it",{
         icon: "🤩",

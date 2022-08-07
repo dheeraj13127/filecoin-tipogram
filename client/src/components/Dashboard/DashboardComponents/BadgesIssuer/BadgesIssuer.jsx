@@ -24,7 +24,7 @@ function BadgesIssuer({userData,tipogramUserId}) {
             }
        
         
-    },[])// eslint-disable-line react-hooks/exhaustive-deps  
+    },[userData])// eslint-disable-line react-hooks/exhaustive-deps  
 
   return (
     <></>

@@ -101,9 +101,9 @@ exports.updateAuthorLikes=async(req,res)=>{
 
 
 exports.updateBadges=async(req,res)=>{
- 
+ console.log(req.body)
   try{
-    await MestifyUser.findById({_id:req.params.userId}).then(async(resp)=>{
+    await MestifyUser.findById({_id:req.body.userId}).then(async(resp)=>{
       if(!resp.badges.includes(req.body.badgesData)){
             await MestifyUser.findOneAndUpdate({_id:req.params.userId},{
       $push:{

@@ -5,5 +5,5 @@ router.post('/updateUserLikedposts',updateUserLikedPosts)
 router.post('/updateImagesPosted',updateImagesPosted)
 router.post('/updateTipsReceived',updateTipsReceived)
 router.put('/updateAuthorLikes/:authorId',updateAuthorLikes)
-router.put('/updateBadges/:userId',updateBadges)
+router.post('/updateBadges',updateBadges)
 module.exports=router 

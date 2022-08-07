@@ -11,17 +11,17 @@ function BadgesIssuer({userData,tipogramUserId}) {
             if(userData&&userData.likeCount>100){
             dispatch(updateUserBadges(tipogramUserId, badgesData[0].id))
             }
-            if(userData&&userData.tipsReceived>15){
-            dispatch(updateUserBadges(tipogramUserId, badgesData[1].id))
-            }
-            if(userData&&userData.tipsReceived>75&&userData.likeCount>500){
-              dispatch(updateUserBadges(tipogramUserId, badgesData[2].id))
-              }
-            let x=new Date(userData&&userData.createdAt)
-            let y=new Date(userData&&userData.createdAt)
-            if(x.getMonth()===y.getMonth()&&x.getDate()===y.getDate()&&x.getFullYear()===2023){
-              dispatch(updateUserBadges(tipogramUserId, badgesData[3].id))
-            }
+            // if(userData&&userData.tipsReceived>15){
+            // dispatch(updateUserBadges(tipogramUserId, badgesData[1].id))
+            // }
+            // if(userData&&userData.tipsReceived>75&&userData.likeCount>500){
+            //   dispatch(updateUserBadges(tipogramUserId, badgesData[2].id))
+            //   }
+            // let x=new Date(userData&&userData.createdAt)
+            // let y=new Date(userData&&userData.createdAt)
+            // if(x.getMonth()===y.getMonth()&&x.getDate()===y.getDate()&&x.getFullYear()===2023){
+            //   dispatch(updateUserBadges(tipogramUserId, badgesData[3].id))
+            // }
        
         
     },[userData])// eslint-disable-line react-hooks/exhaustive-deps  

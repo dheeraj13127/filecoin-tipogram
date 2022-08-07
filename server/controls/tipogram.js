@@ -100,12 +100,12 @@ exports.updateAuthorLikes=async(req,res)=>{
 }
 
 
-exports.updateBadges=async(req,res)=>{
-
+exports.addBadges=async(req,res)=>{
+  
   try{
-    await MestifyUser.findById({_id:req.body.userId}).then(async(resp)=>{
-      if(!resp.badges.includes(req.body.badgesData)){
-            await MestifyUser.findOneAndUpdate({_id:req.body.userId},{
+      res.header("Access-Control-Allow-Origin", "*");
+   
+     await MestifyUser.findOneAndUpdate({_id:req.body.userId},{
       $push:{
         badges:req.body.badgesData
       }
@@ -116,12 +116,12 @@ exports.updateBadges=async(req,res)=>{
       
       }
       else{
-       return res.status(200).json({message:"New badge unlocked"})
+       return res.status(200).json({message:"New badge unlocked",})
       }
     })
-      }
       
-    })
+      
+ 
 
     
   }

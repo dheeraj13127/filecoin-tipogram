@@ -2,7 +2,7 @@ import React from 'react'
 import HashLoader from "react-spinners/HashLoader";
 import '../../../styles/DashboardStyles/DashboardDisplay.scss'
 
-import {LatestImages,ImageCategory,FeaturedArtists,BadgesIssuer} from '../.'
+import {LatestImages,ImageCategory,FeaturedArtists} from '../.'
 
 function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,tipogramImages,tipogramUsers,tipogramUserId}) {
  
@@ -18,7 +18,7 @@ function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,
         </div>)
         :
         (<>
-         <BadgesIssuer userData={userData} tipogramUserId={tipogramUserId}/>
+         
         <LatestImages tipogramImages={tipogramImages} metamaskAccount={metamaskAccount} tipogramContract={tipogramContract} userData={userData}/>
         <FeaturedArtists userData={userData} tipogramUserId={tipogramUserId}  tipogramUsers={tipogramUsers}/>
         <ImageCategory tipogramImages={tipogramImages} metamaskAccount={metamaskAccount} tipogramContract={tipogramContract} userData={userData}/>

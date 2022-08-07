@@ -55,16 +55,16 @@ function MyProfile({userData}) {
                     <Button><TipogramVerfied/></Button>
                     </Tooltip>
                    <Tooltip title="Popular" placement='top'>
-                    <div className={`${userData&&userData.badges.includes(1)?"":"myProfileBadgesIconDisabled"}`}><PopularBadge/></div>
+                    <Button className={`${userData&&userData.badges.includes(1)?"":"myProfileBadgesIconDisabled"}`}><PopularBadge/></Button>
                     </Tooltip>
                    <Tooltip title="Well Tipped" placement='top'>
-                    <div className={`${userData&&userData.badges.includes(2)?"":"myProfileBadgesIconDisabled"}`}><WellTippedBadge/></div>
+                    <Button className={`${userData&&userData.badges.includes(2)?"":"myProfileBadgesIconDisabled"}`}><WellTippedBadge/></Button>
                     </Tooltip>
                    <Tooltip title="Tipogram Artist" placement='top'>
-                    <div className={`${userData&&userData.badges.includes(3)?"":"myProfileBadgesIconDisabled"}`}><TipogramArtistBadge/></div>
+                    <Button className={`${userData&&userData.badges.includes(3)?"":"myProfileBadgesIconDisabled"}`}><TipogramArtistBadge/></Button>
                     </Tooltip>
                    <Tooltip title="Tipogram Achiever" placement='top'>
-                    <div className={`${userData&&userData.badges.includes(4)?"":"myProfileBadgesIconDisabled"}`}><TipogramAchieverBadge/></div>
+                    <Button className={`${userData&&userData.badges.includes(4)?"":"myProfileBadgesIconDisabled"}`}><TipogramAchieverBadge/></Button>
                     </Tooltip>
             </div>
             </Grid>

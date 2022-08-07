@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import {useDispatch,useSelector} from 'react-redux'
 import { Routes, Route,useNavigate } from "react-router-dom";
 import '../../styles/DashboardStyles/Dashboard.scss'
-import {DashboardDisplay,MyProfile,PostImage,DashboardNavbar,TipImage} from './index'
+import {DashboardDisplay,MyProfile,PostImage,DashboardNavbar,TipImage,BadgesIssuer} from './index'
 import {getAllUsers, getUserProfile} from '../../redux/action/auth'
 import { connectWallet } from '../../redux/action/blockchain';
 import {ethers} from 'ethers'
@@ -77,6 +77,7 @@ function Dashboard() {
     <Route path='/myProfile' element={<MyProfile tipogramUserId={tipogramUserId} tipogramUsers={tipogramUsers} tipogramImages={images}  tipogramContract={tipogramContract} userData={userData}/>}/>
     <Route path='/postImage' element={<PostImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>}/>
     <Route path='/tipImage/:id/:authorId' element={<TipImage userData={userData} tipogramContract={tipogramContract} metamaskAccount={defaultAccount}/>} />
+    <Route path="/badges" element={<BadgesIssuer userData={userData}/>} />
     </Routes>     
     
     <Toaster position="top-center" reverseOrder={false} />

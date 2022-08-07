@@ -1,0 +1,75 @@
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+
+
+.badgesIssuerContainer {
+    margin: 250px 0px !important;
+
+}
+
+.badgesIssuerContainerBox {
+    background-color: #272D37 !important;
+    padding: 25px !important;
+    box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -webkit-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 25px -2px rgba(0, 0, 0, 0.75) !important;
+    border-radius: 10px !important;
+}
+
+.badgesIssuerParent {
+    background: transparent !important;
+}
+
+.badgesIssuerCard {
+    margin-top: 20px !important;
+    background: rgba(209, 202, 202, 0.25) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border-radius: 10px !important;
+    border: 2px solid rgba(209, 202, 202, 0.25) !important;
+    flex: 0 0 auto !important;
+}
+
+.badgesIssuerTitle {
+    font-family: $poppins  !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-top: 20px !important;
+    text-align: center !important;
+}
+
+.badgesIssuerInfo {
+    font-family: $roboto  !important;
+    font-weight: 500 !important;
+    color: #ADB9C7 !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+.badgesIssuerIconBox {
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+.badgesIssuerClaimBtn {
+    background-color: #ADB9C7 !important;
+    margin-top: 10px !important;
+    color: black !important;
+    font-family: $poppins  !important;
+    font-weight: 600 !important;
+    text-transform: capitalize !important;
+}
+.badgesIssuerIcon{
+    font-size: 30px !important;
+}
+
+@media only screen and (max-width: 900px) {
+   .badgesIssuerContainer{
+    margin: 80px 0px !important;
+   }
+   
+}

@@ -87,6 +87,9 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
              <a href='/dashboard/postImage'  className='navigatingLink dashboardDrawerListItem'>Post</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
+             <a href='/dashboard/badges'  className='navigatingLink dashboardDrawerListItem'>Badges</a>
+          </ListItem>
+          <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
             <ListItemText>
               <Link to="/signin" className="navigatingLink dashboardDrawerListItem"  onClick={()=>handleUserSignOut()}>Sign Out</Link>
             </ListItemText>

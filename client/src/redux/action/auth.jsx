@@ -99,15 +99,19 @@ export const userSignIn =
       userId:userId
     }
     await axios
-    .post(`https://tipogram.herokuapp.com/dashboard/updateBadges`, data)
+    .post(`https://tipogram.herokuapp.com/dashboard/addBadges`, data)
     .then((res) => {
-      toast("New badge unlocked. Visit your profile to view it",{
+      toast("New badge unlocked !",{
         icon: "🤩",
       })
+
       dispatch({
         type:UPDATE_BADGES,
         payload: res.data.message,
       });
+      setTimeout(() => {
+        window.location.reload();
+       },1500)
     })
     .catch((err) =>{
       

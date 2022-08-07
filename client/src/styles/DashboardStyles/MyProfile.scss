@@ -80,7 +80,7 @@ $openSans: "Open Sans", sans-serif;
 
 .myProfileStatsDetail {
     background-color: white !important;
-    margin: 0px 15px !important;
+    margin: 5px 15px !important;
     color: #02050E !important;
     font-family: $poppins  !important;
     font-weight: 600 !important;
@@ -137,4 +137,16 @@ $openSans: "Open Sans", sans-serif;
         font-size: 15px !important;
     }
 
+}
+@media only screen and (max-width: 376px) {
+    .myProfileStatsDataBox{
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+}
+@media only screen and (max-width: 460px) {
+   .myProfileContainerBox{
+        padding: 10px !important;
+    }
+   
 }

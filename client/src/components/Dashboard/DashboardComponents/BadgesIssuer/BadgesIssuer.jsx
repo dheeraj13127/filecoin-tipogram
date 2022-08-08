@@ -28,7 +28,7 @@ function BadgesIssuer({ userData}) {
         dispatch(updateUserBadges(userData&&userData._id,id))
       }
    else{
-        toast("Not elgible to claim",{
+        toast("Not eligible to claim",{
           icon: "⚠️",
         })
       }

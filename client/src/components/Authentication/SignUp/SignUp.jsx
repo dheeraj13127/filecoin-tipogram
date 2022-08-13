@@ -26,7 +26,7 @@ export default function SignUp() {
 const projectId ="2DHzCBxzg2oEnows9uCK5IWbcDw"
 const projectSecret = "d684e8c4cd0e4bef558de4f2d0d4c5a6"
 const projectIdAndSecret = `${projectId}:${projectSecret}`
-
+const emailFormat=/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/ 
 
   const client = create({
     host: 'ipfs.infura.io',
@@ -55,6 +55,11 @@ const handleSignUpSubmit=async(e)=>{
     toast("Please fill up the fields",{
       icon:"❗️"
     })
+}
+else if(!user.email.match(emailFormat)){
+  toast("Incorrect email format",{
+    icon:"❗️"
+  })
 }
 else if(user.password!==user.confirmPassword){
   toast("Passwords don't match",{

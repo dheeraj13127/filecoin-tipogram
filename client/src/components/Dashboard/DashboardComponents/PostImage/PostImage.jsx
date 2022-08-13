@@ -18,7 +18,21 @@ export default function PostImage({tipogramContract,userData,metamaskAccount}) {
     imgType:"",
     
   })
-  const client = create('https://ipfs.infura.io:5001/api/v0')
+  const projectId ="2DHzCBxzg2oEnows9uCK5IWbcDw"
+  const projectSecret = "d684e8c4cd0e4bef558de4f2d0d4c5a6"
+  const projectIdAndSecret = `${projectId}:${projectSecret}`
+  
+  
+    const client = create({
+      host: 'ipfs.infura.io',
+      port: 5001,
+      protocol: 'https',
+      headers: {
+        authorization: `Basic ${Buffer.from(projectIdAndSecret).toString(
+          'base64'
+        )}`,
+      },
+    })
 
   const [imgHash,setImgHash]=useState(null)
 
@@ -41,7 +55,7 @@ const handleSignUpSubmit=async(e)=>{
   else{
     try {
       const profile=await client.add(imgHash)
-      const proUrl=`https://ipfs.infura.io/ipfs/${profile.path}`
+      const proUrl=`https://tipogram.infura-ipfs.io/ipfs/${profile.path}`
       const data={
         title:post.title,
         imgType:post.imgType,

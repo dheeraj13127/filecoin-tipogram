@@ -7,6 +7,7 @@ import { create } from 'ipfs-http-client'
 import {useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import { userSignUp } from "../../../redux/action/auth";
+
 import { LandingFooter,LandingNavbar } from "../../Landing";
 export default function SignUp() {
 
@@ -20,7 +21,23 @@ export default function SignUp() {
     confirmPassword:"",
     gender:"",
   })
-  const client = create('https://ipfs.infura.io:5001/api/v0')
+
+
+const projectId ="2DHzCBxzg2oEnows9uCK5IWbcDw"
+const projectSecret = "d684e8c4cd0e4bef558de4f2d0d4c5a6"
+const projectIdAndSecret = `${projectId}:${projectSecret}`
+
+
+  const client = create({
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+      authorization: `Basic ${Buffer.from(projectIdAndSecret).toString(
+        'base64'
+      )}`,
+    },
+  })
 
   const [profileImage,setProfileImage]=useState(null)
 
@@ -52,7 +69,8 @@ else if(user.password.length<6){
   else{
     try {
       const profile=await client.add(profileImage)
-      const proUrl=`https://ipfs.infura.io/ipfs/${profile.path}`
+      const proUrl=`https://tipogram.infura-ipfs.io/ipfs/${profile.path}`
+      
       const data={
         userName:user.userName,
         email:user.email,

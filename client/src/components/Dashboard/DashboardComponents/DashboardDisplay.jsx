@@ -14,6 +14,7 @@ function DashboardDisplay({userData,ethBalance,metamaskAccount,tipogramContract,
       {
         tipogramImages.length===0?(
         <div className='dashboardDisplayLoader'> 
+          
          <HashLoader color="#ffffff" loading={true}  size={100} />
         </div>)
         :

@@ -58,6 +58,12 @@ $openSans: "Open Sans", sans-serif;
         color: black !important;
         background-color: white !important; 
         border-radius: 8px !important;
+        margin: 0px 30px 0px 30px !important ;
+    }
+    .featuredArtistsPostBtn{
+      color: black !important;
+      background-color: white !important; 
+      border-radius: 8px !important;
     }
     .featuredArtistsLikeIcon{
         font-size: 15px !important;
@@ -102,6 +108,10 @@ $openSans: "Open Sans", sans-serif;
     }
     .featuredArtistsBadgeIcon{
         margin: 0px 10px !important;
+    }
+    .featuredArtistsPostsBox{
+      margin-top: 30px !important;
+      display: flex !important;
     }
     @media only screen and (max-width: 1200px) {
         .featuredArtistsCardParentBox::-webkit-scrollbar{

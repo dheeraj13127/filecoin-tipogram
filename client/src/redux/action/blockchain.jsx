@@ -28,18 +28,24 @@ export const fetchTipogramImages = payload => async (dispatch) => {
 export const connectWallet = (setErrorMessage, setDefaultAccount, setUserBalance, ethers) => async (dispatch) => {
 
 	if (window.ethereum && window.ethereum.isMetaMask) {
-
-
-		window.ethereum.request({ method: 'eth_requestAccounts' })
+		if(window.ethereum.networkVersion==="4"){
+			window.ethereum.request({ method: 'eth_requestAccounts' })
 			.then(result => {
+			
+			
 				accountChangedHandler(result[0]);
 
 				getAccountBalance(result[0]);
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
-
+				console.log(error)
 			});
+		}
+		else{
+			toast.error("Please connect to Rinkeby Testnet")
+		}
+		
 
 	} else {
 		toast("Please install Metamask", {
@@ -65,6 +71,7 @@ export const connectWallet = (setErrorMessage, setDefaultAccount, setUserBalance
 			.catch(error => {
 				setErrorMessage(error.message);
 				toast.error(error.message);
+			
 			});
 	};
 

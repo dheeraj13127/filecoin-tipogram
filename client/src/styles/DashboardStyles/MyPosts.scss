@@ -1,0 +1,159 @@
+
+$nunito: "Nunito", sans-serif;
+$inter: "Inter", sans-serif;
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$openSans: "Open Sans", sans-serif;
+.myPostsContainer{
+  margin-top: 100px !important;
+}
+.myPostsImgBox{
+    display: flex !important;
+    justify-content: center !important;
+    // #272D37
+}
+
+.myPostsImg{
+    width:320px !important;
+    height:320px !important;
+    border-radius: 15px !important;
+}
+.myPostsCard {
+  padding: 5px !important;
+    margin-top: 20px !important;
+    background: #272D37 !important; 
+    backdrop-filter: blur( 4px ) !important;
+    -webkit-backdrop-filter: blur( 4px ) !important;
+    border-radius: 15px !important;
+    border: 1px solid whitesmoke !important;
+   
+    
+  }
+.myPostsCardParent{
+    background: transparent !important;
+    margin: 10px !important;
+  }
+.myPostsCardParentBox{
+  display: flex !important;
+ overflow-x: auto !important;
+ overflow-y: hidden !important;
+
+}
+.myPostsCardParentBox::-webkit-scrollbar {
+  background-color: transparent !important;
+
+}
+.myPostsCardParentBox::-webkit-scrollbar-thumb {
+  background-color: rgba(209, 202, 202, 0.25) !important;
+  border-radius: 10px !important;
+}
+.myPostsCardTitle {
+  font-family: $roboto !important;
+  font-weight: 500 !important;
+  color: white !important;
+  margin-top: 25px !important;
+  text-align: center !important;
+}
+
+.myPostsHeader{
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  color: #ADB9C7 !important;
+}
+
+.myPostsTitleBox{
+  display: flex !important;
+  align-items: center !important;
+  justify-content:space-between
+}
+.myPostsEthSymbol{
+  margin-top: 25px !important;
+  background-color: #3068FA !important;
+  border-radius: 8px !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  color: white !important;
+  padding: 5px 20px !important;
+}
+.myPostsCreatorInfoBox{
+  margin-top: 15px !important;
+}
+.myPostsCreatorImg{
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 18px  !important;
+  box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+-webkit-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+-moz-box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.75) !important;
+}
+
+.myPostsCreatorInfoCreator{
+  font-family: $roboto !important;
+  font-weight: 450 !important;
+  color: #75808C !important;
+}
+
+.myPostsCreatorInfoCreatorName{
+  font-family: $roboto !important;
+  font-weight: 450 !important;
+  color: white !important;
+  text-transform: capitalize !important;
+}
+.myPostsCreatorInfo{
+  margin-left: 15px !important;
+}
+.myPostsInfoTipBtn{
+  background: white !important;
+  color: #272D37 !important;
+  font-family: $poppins !important;
+  font-weight: 600 !important;
+  text-transform: capitalize  !important;
+  border-radius: 8px !important;
+}
+.myPostsInfoImgBox{
+  display: flex !important;
+  align-items: center !important;
+  
+}
+.myPostsCreatorInfoBox{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.myPostsLikeBtn{
+  position: absolute !important;
+  z-index: 999 !important;
+  top: 35px !important;
+  right: 30px !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  padding:8px 7px 5px 7px !important;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+  .myPostsCardParentBox::-webkit-scrollbar{
+    display: none !important;
+  }
+ 
+ }
+ @media only screen and (max-width: 600px) {
+  .myPostsImg{
+    width:250px !important;
+    height:260px !important;
+    border-radius: 15px !important;
+}
+.myPostsHeader{
+  font-size: 20px !important;
+  text-align: center !important;
+}
+ 
+ }
+@media only screen and (max-width: 900px) {
+  .myPostsContainer{
+    margin-top: 50px !important;
+  }
+ 
+ }

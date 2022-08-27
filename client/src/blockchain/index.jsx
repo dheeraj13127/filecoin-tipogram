@@ -21,6 +21,7 @@ function BlockchainProvider() {
           
           } catch (err) {
             console.log(err);
+           
           }
       
      },[]) // eslint-disable-line react-hooks/exhaustive-deps  

@@ -9,14 +9,16 @@ import HashLoader from 'react-spinners/HashLoader';
 import { PopularBadge, TipogramAchieverBadge, TipogramArtistBadge, TipogramVerfied, WellTippedBadge } from '../BadgesIssuer/BadgesContent';
 import { useState } from 'react';
 import EditProfile from './EditProfile/EditProfile';
+import MyPosts from './MyPosts/MyPosts';
 
-function MyProfile({userData}) {
+function MyProfile({userData,tipogramImages,tipogramUserId}) {
   const [edit,setEdit]=useState(false)
   return (
     <div className='myProfileContainer'>
       <div className="myProfileContainerBox">
         {
           !edit?(
+            <>
             <Grid container>
             <Grid item xs={12} sm={12} md={12} lg={12} className="">
               <div className='myProfileEditButtonBox'>
@@ -68,8 +70,10 @@ function MyProfile({userData}) {
                     </Tooltip>
             </div>
             </Grid>
+         
           </Grid>
-
+          <MyPosts tipogramImages={tipogramImages} tipogramUserId={tipogramUserId}/>
+          </>
           ):(
             <EditProfile setEdit={setEdit} userData={userData}/>
           )

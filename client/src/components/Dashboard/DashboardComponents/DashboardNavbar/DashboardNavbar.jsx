@@ -19,15 +19,7 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract})
     }
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-    // const find=async()=>{
-    //   let imageCount=await tipogramContract&&tipogramContract.methods.imageCount().call()
-    //   .then(res=>{
-    //     console.log(res)
-    //   })
-    //   setImgCount(imageCount)
-      
-      
-    // }
+
    
     
   return (

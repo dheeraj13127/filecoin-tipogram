@@ -14,22 +14,18 @@ function FeaturedArtists({ tipogramUsers}) {
      
 
       <div className='featuredArtistsCardParentBox'>
-        {tipogramUsers&&tipogramUsers.map((x, index) => (
+        {tipogramUsers&&tipogramUsers.filter(x=>x.imagesPosted.length>0).map((x, index) => (
 
           <div key={index} component={Card} className="featuredArtistsCardParent">
             <CardActionArea component="span" className='featuredArtistsCard'>
               <CardContent>
                <div className="featuredArtistsImgBox">
                 <img src={x.profileImage} alt="featuredArtistsProfileImg" className='featuredArtistsProfileImg' />
-                <Tooltip title="Total likes" placement='top'>
-                <Button size='small' className="featuredArtistsLikeBtn"><FavoriteIcon color="error" className='featuredArtistsLikeIcon'/>{x.likeCount}</Button>
-                </Tooltip>
+              
                </div>
                <div className="featuredArtistsNameBox">
                <Typography variant='h6' className='featuredArtistsCreatorName'>{x.userName}</Typography>
-               <Tooltip title="Total posts" placement='top'>
-                <Button size='small' className="featuredArtistsLikeBtn"><ColorLensIcon color="error" className='featuredArtistsPaintIcon'/>{x.imagesPosted.length}</Button>
-                </Tooltip>
+               
                </div>
                <div className="featuredArtistsBadgesBox">
                <Tooltip title="Tipogram verified" placement='top'><span><TipogramVerfied/></span></Tooltip>
@@ -38,8 +34,14 @@ function FeaturedArtists({ tipogramUsers}) {
                <Tooltip title="Tipogram Artist" placement='top'><span>{x.badges.includes(3)&&<TipogramArtistBadge/>}</span></Tooltip>
                <Tooltip title="Tipogram Achiever" placement='top'><span>{x.badges.includes(4)&&<TipogramAchieverBadge/>}</span></Tooltip>
                </div>
-             
-           
+               <div className='featuredArtistsPostsBox'>
+               <Tooltip title="Total posts" placement='top'>
+                <Button size='small' className="featuredArtistsPostBtn"><ColorLensIcon color="error" className='featuredArtistsPaintIcon'/>{x.imagesPosted.length}</Button>
+                </Tooltip>
+                <Tooltip title="Total likes" placement='top'>
+                <Button size='small' className="featuredArtistsLikeBtn"><FavoriteIcon color="error" className='featuredArtistsLikeIcon'/>{x.likeCount}</Button>
+                </Tooltip>
+               </div>
               </CardContent>
             </CardActionArea>
           </div>

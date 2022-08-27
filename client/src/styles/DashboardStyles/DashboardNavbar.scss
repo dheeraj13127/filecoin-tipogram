@@ -28,6 +28,7 @@ $openSans: "Open Sans", sans-serif;
   color: white !important;
 
 }
+
 .dashboardSmallNavbarItems{
     text-transform: capitalize !important;
     font-family: $poppins !important;
@@ -52,6 +53,7 @@ $openSans: "Open Sans", sans-serif;
     font-weight: 600 !important;
     font-size: 14px !important;
     text-transform: capitalize  !important;
+    cursor: pointer !important;
 }
 @media only screen and (max-width: 768px) {
     .dashboardNavbarLarge{

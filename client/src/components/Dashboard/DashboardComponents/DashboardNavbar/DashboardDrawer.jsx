@@ -68,7 +68,7 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
             </div>
           </ListItem>
          <ListItem onClick={() => setOpenDrawer(false)} >
-            <a href="/myProfile" className="navigatingLink dashboardDrawerListProfile">
+            <a href="/#/dashboard/myProfile" className="navigatingLink dashboardDrawerListProfile">
             <img src={userData?userData.profileImage:profileDefault} alt="profile-img" className="dashboardDrawerUserImg"/>
             <Typography variant="body1" className="dashboardDrawerUserName">{userData&&userData.userName}</Typography>
             </a>

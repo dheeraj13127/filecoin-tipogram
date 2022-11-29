@@ -39,7 +39,7 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract})
             </div>
             <div className="dashboardNavbarLarge">
            
-            <a className='navigatingLink' href='/dashboard/myProfile'><Chip
+            <a className='navigatingLink' href='#/dashboard/myProfile'><Chip
                  avatar={<Avatar alt="Metamask" src={userData?userData.profileImage:profileDefault} />}
                  label={userData&&userData.userName}
                 variant="outlined"

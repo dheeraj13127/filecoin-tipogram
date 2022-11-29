@@ -53,18 +53,18 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract})
                  />
                   {
                 location.pathname!=='/dashboard'&&(
-                    <a href='/dashboard'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+                    <a href='/#/dashboard'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                     Dashboard
                   </Button></a>
                 )
             }
-                 <a href='/dashboard/postImage'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+                 <a href='/#/dashboard/postImage'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Post
               </Button></a>
-              <a href='/dashboard/badges'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+              <a href='/#/dashboard/badges'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Badges
               </Button></a>
-              <a href='/signIn' onClick={()=>handleUserSignOut()}  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+              <a href='/#/signIn' onClick={()=>handleUserSignOut()}  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Sign Out
               </Button></a>
         

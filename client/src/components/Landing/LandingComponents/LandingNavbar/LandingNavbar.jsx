@@ -30,10 +30,10 @@ function LandingNavbar() {
                   <>
                    
             
-              <a className='navigatingLink' href='/signup'><Button size="large" className="landingNavbarItems">
+              <a className='navigatingLink' href='/#/signup'><Button size="large" className="landingNavbarItems">
                SignUp
               </Button></a>
-              <a className='navigatingLink' href='/signin'><Button size="large" className="landingNavbarItems">
+              <a className='navigatingLink' href='/#/signin'><Button size="large" className="landingNavbarItems">
                 SignIn
               </Button></a>
                   </>

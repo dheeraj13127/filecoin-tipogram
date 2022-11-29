@@ -18,7 +18,7 @@ function HeroSection() {
                        <br /> You can tip the artist if you are awestruck by his work.
                     </Typography>
                     <div className='heroSectionButtonBox'>
-                    <a href="/signup" className='navigatingLink'><Button className="heroSectionButton">Get Started</Button></a>
+                    <a href="/#/signup" className='navigatingLink'><Button className="heroSectionButton">Get Started</Button></a>
                     </div>
                    
                 </Grid>

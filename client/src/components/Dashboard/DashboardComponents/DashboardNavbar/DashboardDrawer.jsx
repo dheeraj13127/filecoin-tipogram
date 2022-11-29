@@ -84,19 +84,19 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
           {
                 location.pathname!=='/dashboard'&&(
             <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-             <a href='/dashboard'  className='navigatingLink dashboardDrawerListItem'>Dashboard</a>
+             <a href='/#/dashboard'  className='navigatingLink dashboardDrawerListItem'>Dashboard</a>
           </ListItem>
                 )
             }
              <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-             <a href='/dashboard/postImage'  className='navigatingLink dashboardDrawerListItem'>Post</a>
+             <a href='/#/dashboard/postImage'  className='navigatingLink dashboardDrawerListItem'>Post</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-             <a href='/dashboard/badges'  className='navigatingLink dashboardDrawerListItem'>Badges</a>
+             <a href='/#/dashboard/badges'  className='navigatingLink dashboardDrawerListItem'>Badges</a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
             <ListItemText>
-              <Link to="/signin" className="navigatingLink dashboardDrawerListItem"  onClick={()=>handleUserSignOut()}>Sign Out</Link>
+              <Link to="/#/signin" className="navigatingLink dashboardDrawerListItem"  onClick={()=>handleUserSignOut()}>Sign Out</Link>
             </ListItemText>
           </ListItem>
       

@@ -178,9 +178,9 @@ export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt,author
 					icon: "😊",
 	
 				})
-				setTimeout(()=>{
-					window.location.href="/dashboard"
-				},2000)
+				// setTimeout(()=>{
+				// 	window.location.href="/dashboard"
+				// },2000)
 	
 			})
 			.catch(err=>{

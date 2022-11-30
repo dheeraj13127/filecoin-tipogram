@@ -191,7 +191,7 @@ else if(user.password.length<6){
                     Sign Up
                   </Button>
                   <Typography variant="body1"  align="center">
-                    Already have an account? <a href="/signin" className="navigatingLink">Sign in</a>
+                    Already have an account? <a href="/#/signin" className="navigatingLink">Sign in</a>
                   </Typography>        
                 </Stack>               
               </form>

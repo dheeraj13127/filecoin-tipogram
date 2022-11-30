@@ -11,11 +11,11 @@ function LandingFooter() {
         <Grid container>
             <Grid item xs={4} sm={4} md={4} lg={4}>
                 <img src={logo} alt="tipogram-logo" className='landingFooterImage' />
-                <Typography variant="body1" className='landingFooterInfo'>Tipogram is the worlds first site for various artists to show case their digital skills.Create,Post and Tip Images</Typography>
+                <Typography variant="body1" className='landingFooterInfo'>Tipogram is a unique site for various artists to show case their digital skills.Create,Post and Tip Images</Typography>
             </Grid>
             <Grid item xs={4} sm={4} md={4} lg={4} textAlign='center'>
                <Typography variant='h6' className='landingFooterCompany'>Company</Typography>
-                <a href="/" className="navigatingLink"><Typography variant='body1' className='landingFooterAboutUs'>About Us</Typography></a>
+                <a href="" className="navigatingLink"><Typography variant='body1' className='landingFooterAboutUs'>About Us</Typography></a>
             </Grid>
             <Grid item xs={4} sm={4} md={4} lg={4} textAlign='center'>
           <Typography variant='h6' className='landingFooterCompany'>

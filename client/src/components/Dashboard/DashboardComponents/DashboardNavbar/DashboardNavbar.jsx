@@ -9,6 +9,8 @@ import {userSignOut} from '../../../../redux/action/auth'
 import profileDefault from '../../../../assets/landing/tipogram-logo-2.png'
 import metamask from '../../../../assets/dashboard/metamask.png'
 import DashboardDrawer from './DashboardDrawer'
+import { useWeb3Modal } from '@web3modal/react'
+import {useAccount,useDisconnect} from 'wagmi'
 function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract}) {
     const location = useLocation();
     const dispatch = useDispatch();
@@ -19,7 +21,17 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract})
     }
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
+    const { open } = useWeb3Modal()
+    const { isConnected } = useAccount()
+    const {disconnect} = useDisconnect()
+    const connectHandler = async () => {
+      if (isConnected) {
+        disconnect()
+      }
+      else {
+        open()
+      }
+    }
    
     
   return (
@@ -45,29 +57,34 @@ function DashboardNavbar({userData,ethBalance,metamaskAccount,tipogramContract})
                 variant="outlined"
                 className="dashboardNavbarChip"
                  /></a>
-            <Chip
+               <Button onClick={connectHandler}  size="medium" className="dashboardNavbarItemsButton">
+                        {isConnected ? "disconnect" : "connect wallet"}
+                      </Button>
+            {/* <Chip
                  avatar={<Avatar alt="Metamask" src={metamask} />}
                  label={metamaskAccount?`${parseFloat(ethBalance).toFixed(3)} ETH`:"disconnected"}
                 variant="outlined"
                 className="dashboardNavbarChip"
-                 />
+                 /> */}
                   {
-                location.pathname!=='/dashboard'&&(
+                location.pathname!=='/#/dashboard'&&(
                     <a href='/#/dashboard'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                     Dashboard
                   </Button></a>
                 )
             }
-                 <a href='/#/dashboard/postImage'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
+                 
+              <a href='/#/dashboard/postImage'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Post
               </Button></a>
               <a href='/#/dashboard/badges'  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Badges
               </Button></a>
+             
               <a href='/#/signIn' onClick={()=>handleUserSignOut()}  className='navigatingLink'><Button size="large" className="dashboardNavbarItems">
                 Sign Out
               </Button></a>
-        
+             
             </div>
                     </>
                 )

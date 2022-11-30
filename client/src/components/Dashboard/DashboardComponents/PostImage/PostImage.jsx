@@ -7,7 +7,7 @@ import { create } from 'ipfs-http-client'
 import {useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import { uploadImage } from "../../../../redux/action/blockchain";
-
+import {useAccount} from 'wagmi'
 export default function PostImage({tipogramContract,userData,metamaskAccount}) {
 
  
@@ -21,7 +21,7 @@ export default function PostImage({tipogramContract,userData,metamaskAccount}) {
   const projectId ="2DHzCBxzg2oEnows9uCK5IWbcDw"
   const projectSecret = "d684e8c4cd0e4bef558de4f2d0d4c5a6"
   const projectIdAndSecret = `${projectId}:${projectSecret}`
-  
+  const {address}=useAccount()
   
     const client = create({
       host: 'ipfs.infura.io',
@@ -62,7 +62,7 @@ const handleSignUpSubmit=async(e)=>{
         imgUrl:proUrl,
         
       }
-      dispatch(uploadImage(data,tipogramContract,userData,metamaskAccount,navigate))
+      dispatch(uploadImage(data,tipogramContract,address,userData,address))
       setPost({imgType:"",title:"",tipAmount:""})
       setImgHash(null)
       

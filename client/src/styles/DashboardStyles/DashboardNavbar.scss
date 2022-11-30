@@ -35,7 +35,15 @@ $openSans: "Open Sans", sans-serif;
     font-weight: 600 !important;
     color:black !important;
 }
-
+.dashboardNavbarItemsButton{
+    background-color: white !important;
+    color: black !important;
+    border-radius:15px !important;
+    text-transform: capitalize !important;
+    margin-left: 10px !important;
+    margin-right: 5px !important;
+    
+}
 .dashboardNavbarSmall{
     display: none !important;
 }

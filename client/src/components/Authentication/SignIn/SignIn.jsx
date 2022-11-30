@@ -82,7 +82,7 @@ const handleSignInSubmit=(e)=>{
                 Forgot password? <a href="/" className="signInLink">Click Here</a>
               </Typography>
               <Typography variant="body1" className="" align="center">
-                Don't have an account? <a href="/signup" className="signInLink">Sign Up</a>
+                Don't have an account? <a href="/#/signup" className="signInLink">Sign Up</a>
               </Typography>
             </Stack>
           </form>

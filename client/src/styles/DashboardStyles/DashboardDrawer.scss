@@ -16,7 +16,13 @@ $openSans: "Open Sans", sans-serif;
     border: 2px solid #040C27 !important;
 
 }
-
+.dashboardNavbarItemsButtonDrawer{
+    background-color: transparent !important;
+    color: black !important;
+    border: 2px solid #040C27 !important;
+    border-radius:10px !important;
+    text-transform: capitalize !important;
+}
 .dashboardDrawerUserImg{
     height: 50px !important;
     width: 50px !important;

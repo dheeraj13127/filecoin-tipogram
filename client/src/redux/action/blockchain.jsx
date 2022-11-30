@@ -1,6 +1,7 @@
 import { FETCH_OWNER_ACCOUNT, LOAD_TIPOGRAM_CONTRACT, UPLOAD_IMAGE, FETCH_TIPOGRAM_IMAGES, UPDATE_POSTS_LIKES, UPDATE_AUTHOR_LIKES } from '../constants/constants'
 import toast from "react-hot-toast";
 import axios from 'axios';
+
 const web3_utils = require('web3-utils');
 
 export const loadTipogramContract = payload => async (dispatch) => {
@@ -89,11 +90,12 @@ export const connectWallet = (setErrorMessage, setDefaultAccount, setUserBalance
 
 
 
-export const uploadImage = (data, tipogramContract, userData, metamaskAccount) => async (dispatch) => {
+export const uploadImage = (data, tipogramContract, userData, address) => async (dispatch) => {
 	toast("Will take few seconds", {
 		icon: "⏳",
 	});
-	await tipogramContract.methods.uploadImage(data.imgUrl, data.title, userData.profileImage, userData.userName, data.imgType,userData._id).send({ from: metamaskAccount, gas: 1000000 })
+	await tipogramContract.methods.uploadImage(data.imgUrl, data.title, userData.profileImage, userData.userName, data.imgType,userData._id).send({ from: address, maxPriorityFeePerGas: null,
+		maxFeePerGas: null })
 		.then(async (res) => {
 			let userNewData = {
 				userId: userData._id,
@@ -122,9 +124,10 @@ export const uploadImage = (data, tipogramContract, userData, metamaskAccount) =
 		})
 
 }
-export const updatePostLikes = (data, tipogramContract, metamaskAccount, userData,authorId) => async (dispatch) => {
-
-	await tipogramContract.methods.likeImage(data).send({ from: metamaskAccount, gas: 0 })
+export const updatePostLikes = (data, tipogramContract,address, userData,authorId) => async (dispatch) => {
+	
+	await tipogramContract.methods.likeImage(data).send({ from: address, maxPriorityFeePerGas: null,
+		maxFeePerGas: null })
 		.then(async (res) => {
 			const userNewData = {
 				userId: userData._id,
@@ -140,7 +143,10 @@ export const updatePostLikes = (data, tipogramContract, metamaskAccount, userDat
 							type: UPDATE_POSTS_LIKES,
 							payload: resp
 						})
-						window.location.reload(false);
+						setTimeout(()=>{
+							window.location.reload(false);
+						},2000)
+						
 					})
 					.catch(err => {
 						toast.error("Something went wrong")
@@ -162,10 +168,11 @@ export const updatePostLikes = (data, tipogramContract, metamaskAccount, userDat
 
 }
 
-export const tipImages = (data, tipogramContract, metamaskAccount, tipAmt,authorId) => async (dispatch) => {
+export const tipImages = (data, tipogramContract,address ,tipAmt,authorId) => async (dispatch) => {
 	const newTipAmt = web3_utils.toWei(tipAmt,"ether");
 	
-	await tipogramContract.methods.tipImage(data).send({ from: metamaskAccount, value: newTipAmt, gas: 1000000 })
+	await tipogramContract.methods.tipImage(data).send({ from: address, value: newTipAmt,maxPriorityFeePerGas: null,
+		maxFeePerGas: null })
 		.then(async (res) => {
 			let newData={
 				authorId:authorId,

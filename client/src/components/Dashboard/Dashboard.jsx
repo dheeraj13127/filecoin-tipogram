@@ -37,9 +37,9 @@ function Dashboard() {
       }
      }
     
-    useEffect(()=>{
-      dispatch(connectWallet(setErrorMessage,setDefaultAccount,setUserBalance,ethers))
-},[])// eslint-disable-line react-hooks/exhaustive-deps  
+//     useEffect(()=>{
+//       dispatch(connectWallet(setErrorMessage,setDefaultAccount,setUserBalance,ethers))
+// },[])// eslint-disable-line react-hooks/exhaustive-deps  
 
     useEffect(() => {
       if (

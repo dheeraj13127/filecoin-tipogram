@@ -5,9 +5,10 @@ import '../../../../styles/DashboardStyles/TipImage.scss'
 import toast from 'react-hot-toast'
 import {useDispatch} from 'react-redux'
 import { tipImages } from '../../../../redux/action/blockchain'
+import {useAccount} from 'wagmi'
 function TipImage({tipogramContract,metamaskAccount}) {
     const {id,authorId} = useParams()
-   
+    const {address}=useAccount()
     const [tipAmt,setTipAmt]=useState("")
     const dispatch=useDispatch()
       const handleImageTip=()=>{
@@ -20,7 +21,7 @@ function TipImage({tipogramContract,metamaskAccount}) {
     
  
     else{
-      dispatch(tipImages(id,tipogramContract,metamaskAccount,tipAmt,authorId))
+      dispatch(tipImages(id,tipogramContract,address,tipAmt,authorId))
     }
      
   } 

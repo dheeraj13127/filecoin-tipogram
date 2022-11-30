@@ -10,6 +10,7 @@ import {
   Typography,
   Chip,
   Avatar,
+  Button,
  
 
 } from "@mui/material";
@@ -23,6 +24,8 @@ import {useDispatch} from 'react-redux'
 import {userSignOut} from '../../../../redux/action/auth'
 import metamask from '../../../../assets/dashboard/metamask.png'
 import {useLocation} from 'react-router-dom'
+import { useWeb3Modal } from '@web3modal/react'
+import {useAccount,useDisconnect} from 'wagmi'
 const drawerWidth=240
 function DrawerComponent({userData,ethBalance,metamaskAccount}) {
   const location = useLocation();  
@@ -32,6 +35,17 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
 
   const handleUserSignOut=()=>{
       dispatch(userSignOut(navigate));
+  }
+  const { open } = useWeb3Modal()
+  const { isConnected } = useAccount()
+  const {disconnect} = useDisconnect()
+  const connectHandler = async () => {
+    if (isConnected) {
+      disconnect()
+    }
+    else {
+      open()
+    }
   }
   return (
     <>
@@ -74,12 +88,9 @@ function DrawerComponent({userData,ethBalance,metamaskAccount}) {
             </a>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)} className="dashboardDrawerListItemBox">
-          <Chip
-                 avatar={<Avatar alt="Metamask" src={metamask} />}
-                 label={metamaskAccount?`${parseFloat(ethBalance).toFixed(3)} ETH`:"disconnected"}
-                variant="outlined"
-                className="dashboardDrawerChip"
-                 />
+          <Button onClick={connectHandler}  size="medium" className="dashboardNavbarItemsButtonDrawer">
+                        {isConnected ? "disconnect" : "connect wallet"}
+                      </Button>
           </ListItem>
           {
                 location.pathname!=='/dashboard'&&(

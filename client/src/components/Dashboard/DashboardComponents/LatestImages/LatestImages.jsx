@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux'
 import {updatePostLikes } from '../../../../redux/action/blockchain';
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast'
+import {useAccount} from 'wagmi'
 function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}) {
   const dispatch=useDispatch()
   const navigate=useNavigate()
@@ -26,7 +27,7 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
   }
 
 
- 
+  const {address}=useAccount()
  
   const handleUpdatePostLikes=(id,authorId)=>{
     if(userData&&userData.likedPosts.includes(id)){
@@ -40,7 +41,7 @@ function LatestImages({tipogramImages,metamaskAccount,tipogramContract,userData}
       })
     }
     else{
-      dispatch(updatePostLikes(id,tipogramContract,metamaskAccount,userData,authorId))
+      dispatch(updatePostLikes(id,tipogramContract,address,userData,authorId))
      
     }
 

@@ -78,9 +78,9 @@ const handleSignInSubmit=(e)=>{
               >
                 Sign In
               </Button>
-              <Typography variant="body1" className="" align="center">
+              {/* <Typography variant="body1" className="" align="center">
                 Forgot password? <a href="/" className="signInLink">Click Here</a>
-              </Typography>
+              </Typography> */}
               <Typography variant="body1" className="" align="center">
                 Don't have an account? <a href="/#/signup" className="signInLink">Sign Up</a>
               </Typography>

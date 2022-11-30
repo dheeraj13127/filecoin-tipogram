@@ -13,6 +13,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 function MyProfile({userData,tipogramImages,tipogramUserId}) {
   const [edit,setEdit]=useState(false)
+  console.log(userData&&userData.tipsReceived)
   return (
     <div className='myProfileContainer'>
       <div className="myProfileContainerBox">

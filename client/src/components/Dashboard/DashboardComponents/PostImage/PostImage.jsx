@@ -62,7 +62,7 @@ const handleSignUpSubmit=async(e)=>{
         imgUrl:proUrl,
         
       }
-      dispatch(uploadImage(data,tipogramContract,address,userData,address))
+      dispatch(uploadImage(data,tipogramContract,userData,address))
       setPost({imgType:"",title:"",tipAmount:""})
       setImgHash(null)
       

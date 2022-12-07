@@ -41,7 +41,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://tipogram.herokuapp.com",
+  "proxy": "https://tipogram.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",
